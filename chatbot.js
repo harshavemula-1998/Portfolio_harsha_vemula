@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     chatInput.value = '';
 
-    fetch("https://cxxgtxyv3k.execute-api.us-west-2.amazonaws.com/chat", {
+    fetch("https://2ef8ezorc4.execute-api.us-west-2.amazonaws.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
