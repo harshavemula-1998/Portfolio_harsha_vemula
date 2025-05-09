@@ -1,30 +1,56 @@
 const resume = `
 Sai Harsha Vemula is a highly skilled DevOps Engineer with over three years of hands-on experience in cloud infrastructure automation, continuous integration and deployment, container orchestration, and systems reliability engineering. He has contributed significantly at Vitrana, Inc., both as an Associate Software DevOps Engineer and a DevOps Intern.
 
+$1
 - At Vitrana, led the optimization of Kubernetes manifests, implemented robust GitOps practices using Argo CD, and automated multi-cloud provisioning with Terraform and Ansible.
 - Designed and managed secure AWS environments with VPC, EC2, IAM, RDS, ElastiCache, and WAF.
 - Integrated Prometheus and Grafana to reduce incident response times by 40% and elevate uptime to 80%.
 - Wrote and deployed Lambda functions for automating AWS operations, including EBS snapshots and log cleanup.
 - Established secure CI/CD pipelines using GitLab CI, Jenkins, and SonarQube, enabling rapid and reliable deployments.
 
-- Skills: AWS (Advanced), Azure (Intermediate), Terraform, AWS CloudFormation, Ansible, Docker, Kubernetes, Helm, GitLab CI, Jenkins, Argo CD, GitOps, Prometheus, Grafana, ELK Stack, Datadog, IAM, Secrets Manager, WAF, Trivy, JUnit, Java, Python, Shell Scripting, SQL, AWS RDS, MongoDB, Redis, Redshift, Basic front-end (HTML/CSS/JS), Flask, Streamlit
+$1
+- $1: AWS (Advanced), Azure (Intermediate)
+- $1: Terraform, AWS CloudFormation, Ansible
+- $1: Docker, Kubernetes, Helm
+- $1: GitLab CI, Jenkins, Argo CD, GitOps
+- $1: Prometheus, Grafana, ELK Stack, Datadog
+- $1: IAM, Secrets Manager, WAF, Trivy, JUnit
+- $1: Java, Python, Shell Scripting, SQL
+- $1: AWS RDS, MongoDB, Redis, Redshift
+- $1: Basic front-end (HTML/CSS/JS), Flask, Streamlit
 
-- Certifications: AWS Certified Solutions Architect – Associate, HashiCorp Certified: Terraform Associate, Microsoft Certified: Azure Fundamentals
+$1
+- AWS Certified Solutions Architect – Associate
+- HashiCorp Certified: Terraform Associate
+- Microsoft Certified: Azure Fundamentals
 
-- Education: Master of Science in Computer Science – University of Missouri-Kansas City, M.Tech in Software Engineering – Vellore Institute of Technology
+$1
+- Master of Science in Computer Science – University of Missouri-Kansas City
+- M.Tech in Software Engineering – Vellore Institute of Technology
 
-- Projects: AWS Lambda, DynamoDB, Cognito, API Gateway, Spark + Elasticsearch with Terraform, Spring Boot apps on Kubernetes with CI/CD, Full CI/CD suite on EC2, Federated CNN+ViT for MRI data
+$1
+- $1: AWS Lambda, DynamoDB, Cognito, API Gateway
+- $1: Spark + Elasticsearch with Terraform for AWS provisioning
+- $1: Spring Boot apps on Kubernetes with CI/CD automation
+- $1: Full CI/CD suite on EC2 with containerized runners
+- $1: Privacy-preserving CNN+ViT hybrid model trained on decentralized MRI data
 
-- Other: Hosting Portfolio on AWS App Runner, Terraform + Ansible EC2 Automation, NAT Gateway for Private Subnets, Grafana Dashboards for EC2 Logs
+$1
+- Hosting a Portfolio on AWS App Runner
+- Terraform + Ansible EC2 Automation
+- NAT Gateway with Private Subnet Connectivity
+- Grafana Dashboards for EC2 Logs
 
-- Praised for cloud automation, security enforcement, GitLab workflows, and team collaboration at Vitrana.
+$1
+- Praised for cloud automation, security enforcement, GitLab workflows, and proactive team collaboration by multiple team leads and peers at Vitrana.
 
+$1
 - LinkedIn: https://linkedin.com/in/sai-harsha-1a611a1a3/
 - Blogs: https://medium.com/@harshaharshuharsha
 - Schedule: https://calendly.com/vemulasaiharsha/30min
 - Email: vemulasaiharsha@gmail.com
-- Phone: +1-816-614-4801
-- Location: 402 E 37th St, Kansas City, Missouri 64109
+- Phone: +18166144801
+- Location: 402 e 37th st,Kansas City,Missouri,64109
 `;
 
 function showChat() {
