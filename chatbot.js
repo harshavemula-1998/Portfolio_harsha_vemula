@@ -53,6 +53,7 @@ $1
 - Location: 402 e 37th st,Kansas City,Missouri,64109
 `;
 
+
 function showChat() {
   const widget = document.getElementById("chat-widget");
   const toggle = document.getElementById("chat-toggle");
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messages = [
       {
         role: "system",
-        content: `You are a helpful assistant for Sai Harsha Vemula. Here's his resume:\n\n${resume}`
+        content: `You are a helpful assistant for Sai Harsha Vemula. Only answer questions based on the following resume:\n\n${resume}\n\nIf the user asks anything unrelated to this resume, politely respond with: "Sorry, I can only answer questions about Sai Harsha Vemula's resume."`
       },
       {
         role: "user",
