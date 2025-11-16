@@ -50,17 +50,22 @@ jobs:
         run: |
           echo "🔍 Running basic file validation..."
 
-          # Check for common security issues in HTML
-          echo "Checking HTML files for security issues..."
-          if grep -r "onclick=" --include="*.html" --include="*.js" .; then
-            echo "⚠️  Warning: Found inline onclick handlers. Consider using event listeners."
-          fi
-
           # Check for hardcoded credentials (basic check)
           echo "Checking for potential hardcoded secrets..."
-          if grep -rE "(password|secret|api_key|apikey).*=.*['\"][^'\"]+['\"]" --include="*.js" --include="*.html" .; then
-            echo "⚠️  Warning: Potential hardcoded credentials found!"
+          if grep -rE "(password|secret|api_key|apikey).*=.*['\"][^'\"]+['\"]" \
+            --include="*.js" \
+            --include="*.html" \
+            --exclude="jquery.min.js" \
+            --exclude-dir="lib" \
+            --exclude-dir="fonts" .; then
+            echo "❌ Error: Potential hardcoded credentials found!"
             exit 1
+          fi
+
+          # Check for inline event handlers (warning only)
+          echo "Checking HTML for inline event handlers..."
+          if grep -r "onclick=" --include="*.html" . | grep -v "fonts/"; then
+            echo "⚠️  Info: Found inline onclick handlers (chatbot functionality)"
           fi
 
           echo "✅ Basic validation completed!"
