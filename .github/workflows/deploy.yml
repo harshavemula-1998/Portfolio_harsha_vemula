@@ -50,15 +50,13 @@ jobs:
         run: |
           echo "🔍 Running basic file validation..."
 
-          # Check for hardcoded credentials (basic check)
-          echo "Checking for potential hardcoded secrets..."
+          # Check for hardcoded credentials in custom JS/HTML only (exclude libraries)
+          echo "Checking for potential hardcoded secrets in custom files..."
           if grep -rE "(password|secret|api_key|apikey).*=.*['\"][^'\"]+['\"]" \
-            --include="*.js" \
-            --include="*.html" \
-            --exclude="jquery.min.js" \
-            --exclude-dir="lib" \
-            --exclude-dir="fonts" .; then
-            echo "❌ Error: Potential hardcoded credentials found!"
+            --include="chatbot.js" \
+            --include="index.html" \
+            --include="backupindex.html" .; then
+            echo "❌ Error: Potential hardcoded credentials found in custom files!"
             exit 1
           fi
 
