@@ -6,8 +6,59 @@ on:
       - main
 
 jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+          exit-code: '0'
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: Run Trivy config scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          scan-ref: '.'
+          format: 'table'
+          exit-code: '0'
+
+      - name: HTML/CSS/JS Validation
+        run: |
+          echo "🔍 Running basic file validation..."
+
+          # Check for common security issues in HTML
+          echo "Checking HTML files for security issues..."
+          if grep -r "onclick=" --include="*.html" --include="*.js" .; then
+            echo "⚠️  Warning: Found inline onclick handlers. Consider using event listeners."
+          fi
+
+          # Check for hardcoded credentials (basic check)
+          echo "Checking for potential hardcoded secrets..."
+          if grep -rE "(password|secret|api_key|apikey).*=.*['\"][^'\"]+['\"]" --include="*.js" --include="*.html" .; then
+            echo "⚠️  Warning: Potential hardcoded credentials found!"
+            exit 1
+          fi
+
+          echo "✅ Basic validation completed!"
+
   deploy:
     runs-on: ubuntu-latest
+    needs: security-scan
 
     steps:
       - name: Checkout code
