@@ -1,0 +1,16 @@
+# Copy this file to terraform.tfvars and update with your values
+
+domain_name              = "saiharshavemula.com"
+environment              = "prod"
+project_name             = "portfolio"
+enable_cloudfront_logging = true
+enable_s3_versioning     = true
+cloudfront_price_class   = "PriceClass_100"
+alarm_email              = "vemulasaiharsha@gmail.com"
+
+tags = {
+  Project     = "Portfolio"
+  ManagedBy   = "Terraform"
+  Owner       = "Sai Harsha Vemula"
+  Environment = "Production"
+}
