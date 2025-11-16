@@ -115,6 +115,7 @@ jobs:
 
       - name: Sync files to S3
         run: |
+          # Sync static assets (images, fonts, etc.) with long cache
           aws s3 sync . s3://saiharshavemula.com \
             --exclude ".git/*" \
             --exclude ".github/*" \
@@ -124,7 +125,8 @@ jobs:
             --cache-control "max-age=31536000,public" \
             --exclude "*.html" \
             --exclude "*.css" \
-            --exclude "*.js"
+            --exclude "*.js" \
+            --exclude "*.pdf"
 
           # Upload HTML, CSS, and JS with shorter cache
           aws s3 sync . s3://saiharshavemula.com \
@@ -134,6 +136,14 @@ jobs:
             --include "*.js" \
             --cache-control "max-age=3600,public" \
             --content-type "text/html; charset=utf-8" \
+            --metadata-directive REPLACE
+
+          # Upload PDFs (resume) with medium cache and correct content type
+          aws s3 sync resume/ s3://saiharshavemula.com/resume/ \
+            --exclude "*" \
+            --include "*.pdf" \
+            --cache-control "max-age=86400,public" \
+            --content-type "application/pdf" \
             --metadata-directive REPLACE
 
       - name: Invalidate CloudFront cache
