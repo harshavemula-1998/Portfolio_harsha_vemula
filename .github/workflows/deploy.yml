@@ -142,13 +142,18 @@ jobs:
             --content-type "text/html; charset=utf-8" \
             --metadata-directive REPLACE
 
-          # Upload PDFs (resume) with medium cache and correct content type
-          aws s3 sync resume/ s3://saiharshavemula.com/resume/ \
-            --exclude "*" \
-            --include "*.pdf" \
-            --cache-control "max-age=86400,public" \
-            --content-type "application/pdf" \
-            --metadata-directive REPLACE
+          # Upload PDFs (resume) with medium cache and correct content type (if folder exists)
+          if [ -d "resume" ] && [ "$(ls -A resume/*.pdf 2>/dev/null)" ]; then
+            aws s3 sync resume/ s3://saiharshavemula.com/resume/ \
+              --exclude "*" \
+              --include "*.pdf" \
+              --cache-control "max-age=86400,public" \
+              --content-type "application/pdf" \
+              --metadata-directive REPLACE
+            echo "Resume PDFs synced successfully"
+          else
+            echo "No resume PDFs found, skipping resume sync"
+          fi
 
       - name: Invalidate CloudFront cache
         run: |
