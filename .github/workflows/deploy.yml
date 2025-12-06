@@ -1,0 +1,179 @@
+name: Deploy to S3 and CloudFront
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Run daily at 9 AM UTC (4 AM EST / 3 AM CST)
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # Allow manual triggering from GitHub UI
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Run Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+          exit-code: '0'
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: Run Trivy config scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          scan-ref: '.'
+          format: 'table'
+          exit-code: '0'
+
+      - name: HTML/CSS/JS Validation
+        run: |
+          echo "Running basic file validation..."
+
+          # Check for hardcoded credentials in custom JS/HTML only (exclude libraries)
+          echo "Checking for potential hardcoded secrets in custom files..."
+          if grep -rE "(password|secret|api_key|apikey).*=.*['\"][^'\"]+['\"]" \
+            --include="chatbot.js" \
+            --include="index.html" \
+            --include="backupindex.html" .; then
+            echo "Error: Potential hardcoded credentials found in custom files!"
+            exit 1
+          fi
+
+          # Check for inline event handlers (warning only)
+          echo "Checking HTML for inline event handlers..."
+          if grep -r "onclick=" --include="*.html" . | grep -v "fonts/"; then
+            echo "Info: Found inline onclick handlers (chatbot functionality)"
+          fi
+
+          echo "Basic validation completed!"
+
+  performance-test:
+    runs-on: ubuntu-latest
+    needs: security-scan
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '18'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.13.x
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --collect.url=https://saiharshavemula.com || echo "Lighthouse audit completed with warnings"
+          ls -la .lighthouseci/ || echo "Directory not found"
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/**/*
+          retention-days: 30
+          if-no-files-found: warn
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [security-scan, performance-test]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Sync files to S3
+        run: |
+          # Sync static assets (images, fonts, etc.) with long cache
+          aws s3 sync . s3://saiharshavemula.com \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --exclude ".DS_Store" \
+            --delete \
+            --cache-control "max-age=31536000,public" \
+            --exclude "*.html" \
+            --exclude "*.css" \
+            --exclude "*.js" \
+            --exclude "*.pdf"
+
+          # Upload HTML, CSS, and JS with shorter cache
+          aws s3 sync . s3://saiharshavemula.com \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.css" \
+            --include "*.js" \
+            --cache-control "max-age=3600,public" \
+            --content-type "text/html; charset=utf-8" \
+            --metadata-directive REPLACE
+
+          # Upload PDFs (resume) with medium cache and correct content type
+          aws s3 sync resume/ s3://saiharshavemula.com/resume/ \
+            --exclude "*" \
+            --include "*.pdf" \
+            --cache-control "max-age=86400,public" \
+            --content-type "application/pdf" \
+            --metadata-directive REPLACE
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E1NM1JU5WPCOK8 \
+            --paths "/*"
+
+      - name: Wait for invalidation to complete
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id E1NM1JU5WPCOK8 \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+
+          echo "Waiting for invalidation $INVALIDATION_ID to complete..."
+          aws cloudfront wait invalidation-completed \
+            --distribution-id E1NM1JU5WPCOK8 \
+            --id $INVALIDATION_ID
+
+          echo "CloudFront cache invalidated successfully!"
+
+      - name: Deployment summary
+        run: |
+          echo "Deployment completed successfully!"
+          echo "Files synced to S3: s3://saiharshavemula.com"
+          echo "CloudFront distribution: E1NM1JU5WPCOK8"
+          echo "Website URL: https://saiharshavemula.com"
