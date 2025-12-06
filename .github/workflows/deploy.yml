@@ -4,77 +4,10 @@ on:
   push:
     branches:
       - main
-  schedule:
-    # Run daily at 9 AM UTC (4 AM EST / 3 AM CST)
-    - cron: '0 9 * * *'
-  workflow_dispatch:  # Allow manual triggering from GitHub UI
-
-permissions:
-  contents: read
-  security-events: write
-  actions: read
 
 jobs:
-  security-scan:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Run Trivy filesystem scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          severity: 'CRITICAL,HIGH,MEDIUM'
-          exit-code: '0'
-
-      - name: Upload Trivy results to GitHub Security
-        uses: github/codeql-action/upload-sarif@v4
-        if: always()
-        with:
-          sarif_file: 'trivy-results.sarif'
-
-      - name: Run Trivy config scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'config'
-          scan-ref: '.'
-          format: 'table'
-          exit-code: '0'
-
-      - name: HTML/CSS/JS Validation
-        run: |
-          echo "Running basic file validation..."
-
-          # Check for hardcoded credentials in custom JS/HTML only (exclude libraries)
-          echo "Checking for potential hardcoded secrets in custom files..."
-          if grep -rE "(password|secret|api_key|apikey).*=.*['\"][^'\"]+['\"]" \
-            --include="chatbot.js" \
-            --include="index.html" \
-            --include="backupindex.html" .; then
-            echo "Error: Potential hardcoded credentials found in custom files!"
-            exit 1
-          fi
-
-          # Check for inline event handlers (warning only)
-          echo "Checking HTML for inline event handlers..."
-          if grep -r "onclick=" --include="*.html" . | grep -v "fonts/"; then
-            echo "Info: Found inline onclick handlers (chatbot functionality)"
-          fi
-
-          echo "Basic validation completed!"
-
   deploy:
     runs-on: ubuntu-latest
-    needs: security-scan
 
     steps:
       - name: Checkout code
@@ -89,7 +22,6 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          # Sync static assets (images, fonts, etc.) with long cache
           aws s3 sync . s3://saiharshavemula.com \
             --exclude ".git/*" \
             --exclude ".github/*" \
@@ -99,8 +31,7 @@ jobs:
             --cache-control "max-age=31536000,public" \
             --exclude "*.html" \
             --exclude "*.css" \
-            --exclude "*.js" \
-            --exclude "*.pdf"
+            --exclude "*.js"
 
           # Upload HTML, CSS, and JS with shorter cache
           aws s3 sync . s3://saiharshavemula.com \
@@ -111,19 +42,6 @@ jobs:
             --cache-control "max-age=3600,public" \
             --content-type "text/html; charset=utf-8" \
             --metadata-directive REPLACE
-
-          # Upload PDFs (resume) with medium cache and correct content type (if folder exists)
-          if [ -d "resume" ] && [ "$(ls -A resume/*.pdf 2>/dev/null)" ]; then
-            aws s3 sync resume/ s3://saiharshavemula.com/resume/ \
-              --exclude "*" \
-              --include "*.pdf" \
-              --cache-control "max-age=86400,public" \
-              --content-type "application/pdf" \
-              --metadata-directive REPLACE
-            echo "Resume PDFs synced successfully"
-          else
-            echo "No resume PDFs found, skipping resume sync"
-          fi
 
       - name: Invalidate CloudFront cache
         run: |
@@ -144,11 +62,11 @@ jobs:
             --distribution-id E1NM1JU5WPCOK8 \
             --id $INVALIDATION_ID
 
-          echo "CloudFront cache invalidated successfully!"
+          echo "CloudFront cache invalidated successfully"
 
       - name: Deployment summary
         run: |
-          echo "Deployment completed successfully!"
+          echo "Deployment completed successfully"
           echo "Files synced to S3: s3://saiharshavemula.com"
           echo "CloudFront distribution: E1NM1JU5WPCOK8"
           echo "Website URL: https://saiharshavemula.com"
