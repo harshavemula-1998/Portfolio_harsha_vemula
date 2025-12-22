@@ -22,7 +22,7 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync . s3://saiharshavemula.com \
+          aws s3 sync . s3://portfolio-saiharshavemula \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "*.md" \
@@ -34,7 +34,7 @@ jobs:
             --exclude "*.js"
 
           # Upload HTML, CSS, and JS with shorter cache
-          aws s3 sync . s3://saiharshavemula.com \
+          aws s3 sync . s3://portfolio-saiharshavemula \
             --exclude "*" \
             --include "*.html" \
             --include "*.css" \
@@ -43,30 +43,9 @@ jobs:
             --content-type "text/html; charset=utf-8" \
             --metadata-directive REPLACE
 
-      - name: Invalidate CloudFront cache
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id E1NM1JU5WPCOK8 \
-            --paths "/*"
-
-      - name: Wait for invalidation to complete
-        run: |
-          INVALIDATION_ID=$(aws cloudfront create-invalidation \
-            --distribution-id E1NM1JU5WPCOK8 \
-            --paths "/*" \
-            --query 'Invalidation.Id' \
-            --output text)
-
-          echo "Waiting for invalidation $INVALIDATION_ID to complete..."
-          aws cloudfront wait invalidation-completed \
-            --distribution-id E1NM1JU5WPCOK8 \
-            --id $INVALIDATION_ID
-
-          echo "CloudFront cache invalidated successfully"
-
       - name: Deployment summary
         run: |
           echo "Deployment completed successfully"
-          echo "Files synced to S3: s3://saiharshavemula.com"
-          echo "CloudFront distribution: E1NM1JU5WPCOK8"
-          echo "Website URL: https://saiharshavemula.com"
+          echo "Files synced to S3: s3://portfolio-saiharshavemula"
+          echo "Website URL: http://portfolio-saiharshavemula.s3-website-us-east-1.amazonaws.com"
+          echo "Note: CloudFront distribution will be added once SSL certificate is validated"
