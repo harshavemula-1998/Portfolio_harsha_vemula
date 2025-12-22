@@ -90,6 +90,26 @@
       .zoom-effect:hover {
         transform: scale(1.1);
       }
+
+      /* Compact navigation */
+      .navbar-nav .nav-item {
+        margin: 0 0.1rem;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 13px;
+        padding: 0.5rem 0.4rem;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-nav .nav-item {
+          margin: 0;
+        }
+        .navbar-nav .nav-link {
+          font-size: 16px;
+          padding: 0.5rem 1rem;
+        }
+      }
     </style>
 <link href="chatbot.css" rel="stylesheet"/></head>
 <body data-offset="300" data-spy="scroll" data-target=".site-navbar-target">
@@ -106,7 +126,8 @@
 <li class="nav-item"><a class="nav-link" href="#resume-section"><span>Resume</span></a></li>
 <li class="nav-item"><a class="nav-link" href="#project-section"><span>Projects</span></a></li>
 <li class="nav-item"><a class="nav-link" href="#blogs-section"><span>Blogs</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#achievements-section"><span>Achievements</span></a></li>
+<li class="nav-item"><a class="nav-link" href="#achievements-section"><span>Certs</span></a></li>
+<li class="nav-item"><a class="nav-link" href="#conferences-section"><span>Talks</span></a></li>
 <li class="nav-item"><a class="nav-link" href="#contact-section"><span>Contact</span></a></li>
 </ul>
 </div>
@@ -446,6 +467,57 @@
 </div>
 <div class="col-md-4 ftco-animate text-center">
 <img alt="GitHub Actions Certification Badge" class="img-fluid" src="images/github-actions-badge.webp" style="max-width: 200px;"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Conferences Section -->
+<section class="ftco-section" id="conferences-section">
+<div class="container">
+<div class="row justify-content-center mb-5 pb-5">
+<div class="col-md-7 heading-section text-center ftco-animate">
+<h1 class="big big-2">Conferences</h1>
+<h2 class="mb-4">Conference Presentations</h2>
+<p>Here are my research presentations and poster sessions at major conferences.</p>
+</div>
+</div>
+<!-- AGU Conference Presentation -->
+<div class="row mb-5">
+<div class="col-md-12 ftco-animate">
+<div class="text mt-3 d-block">
+<h3 class="heading">American Geophysical Union (AGU) Fall Meeting 2024</h3>
+<h4>Research to Operations Hydrologic Consortium (R2OHC) Platform</h4>
+<p>
+                Presented a comprehensive poster on the R2OHC (Research to Operations Hybrid Cloud) Platform at AGU Fall Meeting 2024. As part of the CIROH Cyberinfrastructure team at the University of Alabama, I contributed to developing a multi-cloud infrastructure combining AWS, Google Cloud, Azure, and on-premises HPC resources to support hydrological modeling. The platform serves 28 consortium institutions and enables computationally intensive NextGen water simulations through containerized workflows (Docker/Singularity), managed JupyterHub environments, and Infrastructure as Code practices.
+              </p>
+</div>
+</div>
+</div>
+<div class="row mb-4">
+<div class="col-md-12 ftco-animate text-center">
+<a href="AGU_Poster_R2OHC.pdf" target="_blank">
+<img alt="AGU Conference Poster Preview" class="img-fluid" src="images/agu-poster-preview.png" style="max-width: 800px; border: 2px solid #ffbd39; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"/>
+</a>
+<p class="mt-2"><small>Click to view full poster PDF</small></p>
+</div>
+</div>
+<div class="row mb-4">
+<div class="col-md-12 ftco-animate">
+<div class="text d-block">
+<p><strong>Key Platform Achievements:</strong></p>
+<ul>
+<li>13,000+ NGIAB Docker downloads supporting containerized hydrologic modeling</li>
+<li>1,400+ daily CONUS-wide NextGen executions via NRDS (NextGen Research Datastream)</li>
+<li>SQL access to 2.7 million NWM forecast points for comprehensive water resource analysis</li>
+<li>Support for 405+ researchers across 151 active research projects</li>
+<li>Multi-cloud infrastructure automation with Terraform and AWS Step Functions</li>
+<li>Cost optimization and security compliance across 28 consortium institutions</li>
+</ul>
+<p>
+                <a aria-label="View LinkedIn Post" class="btn btn-primary py-3 px-4" href="https://www.linkedin.com/feed/update/urn:li:activity:7407970062692798465/" target="_blank">View LinkedIn Post</a>
+                <a aria-label="Download Poster PDF" class="btn btn-primary py-3 px-4" href="AGU_Poster_R2OHC.pdf" target="_blank">Download Poster</a>
+</p>
+</div>
 </div>
 </div>
 </div>

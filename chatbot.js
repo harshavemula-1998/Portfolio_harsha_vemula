@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messages = [
       {
         role: "system",
-        content: `You are a helpful assistant for Sai Harsha Vemula. Only answer questions based on the following resume:\n\n${resume}\n\nIf the user asks anything unrelated to this resume, politely respond with: "Sorry, I can only answer questions about Sai Harsha Vemula's resume."`
+        content: `You are a helpful assistant for Sai Harsha Vemula (also known as Harsha). Answer questions based on the following resume. Be friendly and helpful. When users refer to "Harsha", "Sai", "Sai Harsha", or "you", they are asking about Sai Harsha Vemula.\n\nResume:\n${resume}\n\nIf the user asks something completely unrelated to this resume (like weather, recipes, etc.), politely respond with: "I'm here to answer questions about Sai Harsha Vemula's professional background. How can I help you learn more about his experience?"`
       },
       {
         role: "user",
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     chatInput.value = '';
 
-    fetch("https://rfh4nztbkj.execute-api.us-west-2.amazonaws.com/chat", {
+    fetch("https://ab5nlnbd34.execute-api.us-east-1.amazonaws.com/prod/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
