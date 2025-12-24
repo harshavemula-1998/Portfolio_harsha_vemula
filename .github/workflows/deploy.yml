@@ -22,25 +22,40 @@ jobs:
 
       - name: Sync files to S3
         run: |
+          # Sync static assets (images, PDFs, fonts, etc.) with long cache
           aws s3 sync . s3://portfolio-saiharshavemula \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "*.md" \
             --exclude ".DS_Store" \
-            --delete \
-            --cache-control "max-age=31536000,public" \
             --exclude "*.html" \
             --exclude "*.css" \
-            --exclude "*.js"
+            --exclude "*.js" \
+            --delete \
+            --cache-control "max-age=31536000,public"
 
-          # Upload HTML, CSS, and JS with shorter cache
+          # Upload HTML files with no cache
           aws s3 sync . s3://portfolio-saiharshavemula \
             --exclude "*" \
             --include "*.html" \
-            --include "*.css" \
-            --include "*.js" \
-            --cache-control "max-age=3600,public" \
             --content-type "text/html; charset=utf-8" \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
+            --metadata-directive REPLACE
+
+          # Upload CSS files with no cache
+          aws s3 sync . s3://portfolio-saiharshavemula \
+            --exclude "*" \
+            --include "*.css" \
+            --content-type "text/css" \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
+            --metadata-directive REPLACE
+
+          # Upload JS files with no cache
+          aws s3 sync . s3://portfolio-saiharshavemula \
+            --exclude "*" \
+            --include "*.js" \
+            --content-type "application/javascript" \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
             --metadata-directive REPLACE
 
       - name: Deployment summary
