@@ -4,6 +4,22 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+# OIDC: GitHub mints a short-lived token that AWS exchanges for the deploy role.
+# No AWS keys are stored in this repository.
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  BUCKET: saiharshavemula-portfolio
+  DISTRIBUTION_ID: E3FQO5TN212OAJ
+  ROLE_ARN: arn:aws:iam::060954228780:role/github-portfolio-deploy
 
 jobs:
   deploy:
@@ -13,54 +29,40 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Configure AWS credentials
+      - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v5
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ env.ROLE_ARN }}
           aws-region: us-east-1
 
       - name: Sync files to S3
         run: |
-          # Sync static assets (images, PDFs, fonts, etc.) with long cache
-          aws s3 sync . s3://portfolio-saiharshavemula \
-            --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude "*.md" \
-            --exclude ".DS_Store" \
-            --exclude "*.html" \
-            --exclude "*.css" \
-            --exclude "*.js" \
-            --delete \
+          # Repo-only files that should never be published
+          SKIP=(--exclude ".git/*" --exclude ".github/*" --exclude "*.md" --exclude "*.DS_Store"
+                --exclude ".gitignore" --exclude ".gitattributes" --exclude "CNAME")
+
+          # Static assets (images, PDFs, fonts) with a long cache; removes files deleted from the repo
+          aws s3 sync . "s3://$BUCKET" --delete "${SKIP[@]}" \
+            --exclude "*.html" --exclude "*.css" --exclude "*.js" \
             --cache-control "max-age=31536000,public"
 
-          # Upload HTML files with no cache
-          aws s3 sync . s3://portfolio-saiharshavemula \
-            --exclude "*" \
-            --include "*.html" \
+          # HTML, CSS and JS with no cache so updates show up immediately
+          aws s3 sync . "s3://$BUCKET" --delete "${SKIP[@]}" --exclude "*" --include "*.html" \
             --content-type "text/html; charset=utf-8" \
-            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
-            --metadata-directive REPLACE
-
-          # Upload CSS files with no cache
-          aws s3 sync . s3://portfolio-saiharshavemula \
-            --exclude "*" \
-            --include "*.css" \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+          aws s3 sync . "s3://$BUCKET" --delete "${SKIP[@]}" --exclude "*" --include "*.css" \
             --content-type "text/css" \
-            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
-            --metadata-directive REPLACE
-
-          # Upload JS files with no cache
-          aws s3 sync . s3://portfolio-saiharshavemula \
-            --exclude "*" \
-            --include "*.js" \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+          aws s3 sync . "s3://$BUCKET" --delete "${SKIP[@]}" --exclude "*" --include "*.js" \
             --content-type "application/javascript" \
-            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
-            --metadata-directive REPLACE
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*" \
+            --query 'Invalidation.{Id:Id,Status:Status}' --output table
 
       - name: Deployment summary
         run: |
-          echo "Deployment completed successfully"
-          echo "Files synced to S3: s3://portfolio-saiharshavemula"
-          echo "Website URL: http://portfolio-saiharshavemula.s3-website-us-east-1.amazonaws.com"
-          echo "Note: CloudFront distribution will be added once SSL certificate is validated"
+          echo "Synced to s3://$BUCKET and invalidated CloudFront $DISTRIBUTION_ID"
+          echo "Live at https://harshavemula.com/"
