@@ -1,714 +1,766 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<title>Sai Harsha Vemula Portfolio</title>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
-<link href="css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
-<link href="css/animate.css" rel="stylesheet"/>
-<link href="css/owl.carousel.min.css" rel="stylesheet"/>
-<link href="css/owl.theme.default.min.css" rel="stylesheet"/>
-<link href="css/magnific-popup.css" rel="stylesheet"/>
-<link href="css/aos.css" rel="stylesheet"/>
-<link href="css/ionicons.min.css" rel="stylesheet"/>
-<link href="css/flaticon.css" rel="stylesheet"/>
-<link href="css/icomoon.css" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
-<style>
-      /* Custom styles from resume */
-      .about-mf .box-shadow-full {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sai Harsha Vemula — DevOps Engineer | AWS Community Builder</title>
+  <meta name="description" content="Sai Harsha Vemula, DevOps Engineer with 4+ years building secure, automated and cost-efficient cloud infrastructure with AWS, Terraform, Kubernetes and CI/CD.">
+  <link rel="canonical" href="https://harshavemula.com/">
+  <meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
 
-      .about-mf .about-img {
-        margin-bottom: 2rem;
-      }
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Sai Harsha Vemula — DevOps Engineer">
+  <meta property="og:description" content="DevOps Engineer: AWS, Terraform, Kubernetes, CI/CD and cloud security. 4+ years running production infrastructure.">
+  <meta property="og:url" content="https://harshavemula.com/">
+  <meta property="og:image" content="https://harshavemula.com/assets/img/devcon/devcon_1.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
 
-      .about-mf .about-img img {
-        margin-left: 10px;
-      }
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 
-      .skill-mf .progress {
-        margin: .5rem 0 1.2rem 0;
-        border-radius: 0;
-        height: .7rem;
-      }
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 
-      .skill-mf .progress .progress-bar {
-        height: .7rem;
-        background-color: #ffbd39;
-      }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sai Harsha Vemula",
+    "alternateName": "Harsha Vemula",
+    "url": "https://harshavemula.com/",
+    "image": "https://harshavemula.com/assets/img/about-me.jpg",
+    "jobTitle": "DevOps Engineer",
+    "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressCountry": "IN" },
+    "sameAs": [
+      "https://www.linkedin.com/in/saiharshavemula/",
+      "https://github.com/harshavemula-ua",
+      "https://medium.com/@harshaharshuharsha"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      /* Animation styles */
-      #typing-animation {
-        position: relative;
-        font-size: 30px;
-        font-weight: bold;
-        color: rgb(255, 255, 255);
-        overflow: hidden;
-        white-space: nowrap;
-        animation: typing 3s steps(20, end) infinite;
-      }
-
-      #typing-animation:before {
-        content: "";
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: #ccc;
-        animation: typing-cursor 0.5s ease-in-out infinite;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-
-      @keyframes typing-cursor {
-        from {
-          width: 5px;
-        }
-        to {
-          width: 0;
-        }
-      }
-
-      /* project image zoom effect */
-      .zoom-effect {
-        overflow: hidden;
-        transition: transform 0.3s ease-out;
-      }
-
-      .zoom-effect:hover {
-        transform: scale(1.1);
-      }
-
-      /* Compact navigation */
-      .navbar-nav .nav-item {
-        margin: 0 0.1rem;
-      }
-
-      .navbar-nav .nav-link {
-        font-size: 13px;
-        padding: 0.5rem 0.4rem;
-      }
-
-      @media (max-width: 991px) {
-        .navbar-nav .nav-item {
-          margin: 0;
-        }
-        .navbar-nav .nav-link {
-          font-size: 16px;
-          padding: 0.5rem 1rem;
-        }
-      }
-    </style>
-<link href="chatbot.css" rel="stylesheet"/></head>
-<body data-offset="300" data-spy="scroll" data-target=".site-navbar-target">
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-<div class="container">
-<a class="navbar-brand" href="index.html">Sai Harsha Vemula</a>
-<button aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" data-target="#ftco-nav" data-toggle="collapse" type="button">
-<span class="oi oi-menu"></span> Menu
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="brand">
+        <span class="brand__mark" aria-hidden="true">SH</span>
+        <span class="brand__name">Sai Harsha Vemula</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#talks">Talks</a>
+        <a href="#certs">Certs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="kbd-btn" type="button" data-open-palette title="Open command menu">
+          <span>Search</span><kbd>⌘K</kbd>
         </button>
-<div class="collapse navbar-collapse" id="ftco-nav">
-<ul class="navbar-nav nav ml-auto">
-<li class="nav-item"><a class="nav-link" href="#home-section"><span>Home</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#about-section"><span>About</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#resume-section"><span>Resume</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#project-section"><span>Projects</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#blogs-section"><span>Blogs</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#achievements-section"><span>Certs</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#conferences-section"><span>Talks</span></a></li>
-<li class="nav-item"><a class="nav-link" href="#contact-section"><span>Contact</span></a></li>
-</ul>
-</div>
-</div>
-</nav>
-<section class="hero" id="home-section">
-<div class="home-slider owl-carousel">
-<div class="slider-item">
-<div class="overlay"></div>
-<div class="container">
-<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.webp);">
-<div class="overlay"></div>
-</div>
-<div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
-<div class="text">
-<span class="subheading">Hello!</span>
-<h1 class="mb-4 mt-3">I'm <span>Sai Harsha Vemula</span></h1>
-<h2>Software Engineer</h2>
-<p><a class="btn btn-primary py-3 px-4" href="https://www.linkedin.com/in/sai-harsha-vemula-1a611a1a3">LinkedIn</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-<div class="container">
-<div class="row">
-<div class="col-md-6 col-lg-5 d-flex">
-<div class="img-about img d-flex align-items-stretch">
-<div class="overlay">
-<div class="row">
-<div class="col-sm-6 col-md-5">
-<div class="about-img">
-<img alt="" class="img-fluid rounded b-shadow-a" src="images/about-me.webp"/>
-</div>
-</div>
-<div class="col-sm-6 col-md-7">
-<div class="about-info">
-<p><span class="title-s">Name: </span> <span>Sai Harsha Vemula</span></p>
-<p><span class="title-s">Job Role: </span> <span>DevOps Engineer</span></p>
-<p><span class="title-s">Experience: </span> <span>4+ Years</span></p>
-<p><span class="title-s">Address: </span> <span>Tuscaloosa, Alabama</span></p>
-</div>
-</div>
-</div>
-<div class="skill-mf">
-<p class="title-s">Skills</p>
-<span>Java</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar" role="progressbar" style="width: 90%;"></div>
-</div>
-<span>Python</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar" role="progressbar" style="width: 80%;"></div>
-</div>
-<span>Shell Scripting</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar" role="progressbar" style="width: 85%;"></div>
-</div>
-<span>AWS</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar" role="progressbar" style="width: 80%;"></div>
-</div>
-<span>Kubernetes</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar" role="progressbar" style="width: 85%;"></div>
-</div>
-<span>Terraform</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar" role="progressbar" style="width: 90%;"></div>
-</div>
-<span>SQL</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="progress-bar" role="progressbar" style="width: 75%;"></div>
-</div>
-<span>Web Development</span> <span class="pull-right"></span>
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar" role="progressbar" style="width: 70%;"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-<div class="row justify-content-start pb-3">
-<div class="col-md-12 heading-section ftco-animate">
-<h1 class="big">About</h1>
-<h2 class="mb-4">About Me</h2>
-<p>I am a versatile DevOps Engineer with over four years of experience building scalable infrastructure, automating cloud environments, and streamlining CI/CD pipelines. Currently working at the University of Alabama's Alabama Water Institute, I specialize in designing and implementing AWS-based research infrastructure with a focus on security, compliance, and cost optimization.</p>
-<p>I am proficient in infrastructure automation using Terraform, Ansible, and AWS CloudFormation, with extensive experience in Python, Bash, and shell scripting for workflow automation. My cloud expertise spans AWS and Azure, with deep knowledge of security frameworks including CloudTrail, GuardDuty, Security Hub, and IAM best practices.</p>
-<p>My DevOps toolkit includes containerization (Docker, Kubernetes, Helm), CI/CD automation (GitHub Actions, GitLab, Jenkins, Argo CD), and comprehensive observability solutions (Prometheus, Grafana, CloudWatch, ELK Stack). I've successfully implemented multi-architecture build pipelines, automated compliance workflows, and achieved significant cost savings through strategic resource optimization.</p>
-<p>I'm passionate about bridging research and technology, enabling teams to build reproducible, secure, and scalable infrastructure. My goal is to continue contributing to innovative projects that leverage cloud-native technologies to solve complex challenges while maintaining operational excellence and security compliance.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Resume Section -->
-<section class="ftco-section ftco-no-pb" id="resume-section">
-<div class="container">
-<div class="row justify-content-center pb-5">
-<div class="col-md-10 heading-section text-center ftco-animate">
-<h1 class="big big-2">Resume</h1>
-<h2 class="mb-4">Resume</h2>
-<p>Purpose-driven DevOps Engineer with 4+ years of experience, specializing in cloud infrastructure automation, security compliance, and scalable CI/CD pipelines for research and enterprise environments.</p>
-</div>
-</div>
-<div class="row justify-content-center mt-3">
-<div class="col-md-6 text-center ftco-animate">
-<p><a class="btn btn-primary py-4 px-5" href="https://saiharshavemula.com/resume/Sai_Harsha_Vemula_Resume.pdf" target="_blank">Download Resume</a></p>
-</div>
-</div>
-<div class="row">
-<h1 class="big-4">Experience</h1>
-<div class="underline"></div>
-</div>
-<br/>
-<!-- Current Role -->
-<div class="row">
-<div class="col-md-12">
-<div class="resume-wrap ftco-animate">
-<span class="date">July 2023 - Present</span>
-<h2>DevOps Engineer</h2>
-<span class="position">University of Alabama – Alabama Water Institute | Tuscaloosa, Alabama, USA</span>
-<p class="mt-4">
-<ul>
-<li>Automated research infrastructure provisioning using Terraform and AWS (EC2, S3, Lambda, Step Functions), reducing deployment time by 45%.</li>
-<li>Implemented comprehensive security framework with CloudTrail, Security Hub, GuardDuty, and IAM Access Analyzer for institutional compliance.</li>
-<li>Established automated vulnerability scanning (Trivy, Grype, SonarQube) integrated into CI/CD workflows for continuous security validation.</li>
-<li>Developed multi-architecture Docker build pipelines (x86/ARM64) using GitHub Actions and AWS CodeBuild.</li>
-<li>Optimized AWS resource utilization achieving 30% monthly cost savings through strategic auditing of EBS, EC2, and S3 resources.</li>
-<li>Enhanced observability with CloudWatch metrics, dashboards, and alerting for workflow executions and AWS health events.</li>
-<li>Integrated AWS Config and Trusted Advisor for real-time compliance monitoring across multi-account environments.</li>
-<li>Designed scalable CI/CD pipelines for scientific modeling workloads, enabling reproducible, event-driven research automation.</li>
-</ul>
-</p>
-</div>
-</div>
-</div>
-<br/>
-<!-- Previous Roles -->
-<div class="row">
-<div class="col-md-6">
-<div class="resume-wrap ftco-animate">
-<span class="date">2021-2023</span>
-<h2>Associate Software Engineer - DevOps</h2>
-<span class="position">Vitrana, Inc.</span>
-<p class="mt-4">
-<ul>
-<li>Optimized Kubernetes deployments, boosting speed by 20% and reducing downtime by 30% through refined manifests and automation.</li>
-<li>Designed AWS VPCs with optimized subnets, CIDR allocations, and NACLs for enhanced security and performance.</li>
-<li>Deployed Prometheus and Grafana monitoring, reducing incident response times by 40% and elevating uptime to 80%.</li>
-<li>Implemented Terraform IaC for automated infrastructure provisioning, eliminating configuration drift.</li>
-<li>Integrated security tools (Trivy, SonarQube) into CI/CD workflows and managed AWS RDS, ElastiCache, WAF, Secrets Manager.</li>
-<li>Implemented Argo CD for GitOps-based delivery, improving Kubernetes deployment consistency by 30%.</li>
-</ul>
-</p>
-</div>
-</div>
-<div class="col-md-6">
-<div class="resume-wrap ftco-animate">
-<span class="date">2020-2021</span>
-<h2>Software Engineer Intern</h2>
-<span class="position">Vitrana, Inc.</span>
-<p class="mt-4">
-<ul>
-<li>Integrated Azure AD for secure identity management with SSO and MFA implementation.</li>
-<li>Automated monitoring and deployment workflows using Bash and Python, reducing manual intervention by 40%.</li>
-<li>Developed AWS Lambda scripts for EBS snapshots, ECR cleanup, log management, and dynamic EC2 scaling.</li>
-<li>Led cloud-native migration of legacy applications, reducing maintenance costs by 15%.</li>
-<li>Designed IAM roles and Kubernetes RBAC policies for secure access control and compliance.</li>
-<li>Optimized 300+ Docker container deployments, reducing errors by 25%, and automated configuration with Ansible.</li>
-<li>Implemented real-time dashboards (AWS QuickSight, Redshift, Glue) and ELK stack for centralized logging.</li>
-</ul>
-</p>
-</div>
-</div>
-</div>
-<br/><br/>
-<div class="row">
-<h1 class="big-4">Education</h1>
-<div class="underline"></div>
-</div>
-<br/>
-<div class="row">
-<div class="col-md-6">
-<div class="resume-wrap ftco-animate">
-<span class="date">2023-2024</span>
-<h2>Master in Computer Science</h2>
-<span class="position">University of Missouri-Kansas City</span>
-<p class="mt-4">Kansas City, Missouri</p>
-</div>
-</div>
-<div class="col-md-6">
-<div class="resume-wrap ftco-animate">
-<span class="date">2016-2021</span>
-<h2>M Tech Integrated Software Engineering</h2>
-<span class="position">Vellore Institute of Technology</span>
-<p class="mt-4">Vellore, Tamil Nadu, India</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-
-
-<section class="ftco-section" id="portfolio-workflow">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-5">
-      <div class="col-md-10 text-center">
-        <h2 class="mb-4" style="font-size: 36px;">How My Portfolio Works</h2>
-        <p style="font-size: 18px;">This animation illustrates the serverless AWS architecture behind my portfolio and chatbot.</p>
-        <img src="images/portfolio-workflow.gif" alt="Portfolio Workflow GIF" class="img-fluid" style="max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 6px 30px rgba(0,0,0,0.3); margin-top: 20px;"/>
+        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Toggle color theme">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn nav__burger" type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </div>
     </div>
-  </div>
-</section>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#talks">Talks</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
 
-<section class="ftco-section" id="project-section">
-<div class="container">
-<div class="row justify-content-center mb-5 pb-5">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h1 class="big big-2">Projects</h1>
-<h2 class="mb-4">Projects</h2>
-<p>Below are some of the projects I have worked on, focusing on automation, deployment, and analytics in the software engineering domain.</p>
-</div>
-</div>
-<div class="row d-flex">
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<a class="block-20 zoom-effect" href="https://github.com/CIROH-UA/ngen-datastream/tree/main" target="_blank" style="background-image: url('images/ngen_aws_diagram.jpg');">
-</a>
-<div class="text mt-3 float-right d-block">
-<h3 class="heading"><a href="https://github.com/CIROH-UA/ngen-datastream/tree/main" target="_blank">NGEN-Datastream - National Water Model (CIROH)</a></h3>
-<p>Led DevOps and infrastructure automation for NextGen National Water Model Research Datastream, managing 68,000+ successful hydrologic model executions. Architected multi-environment Terraform deployment pipeline with AWS Step Functions orchestration across 21 VPUs. Developed GitHub Actions CI/CD workflows for automated AMI creation, testing, and validation with health check auto-rerun capability and cost protection thresholds. Built Docker images for multi-architecture deployment, configured IAM policies, and implemented CloudWatch monitoring with S3 lifecycle policies for cost optimization.</p>
-</div>
-</div>
-</div>
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<a class="block-20 zoom-effect" href="#" style="background-image: url('images/proj_3.webp');">
-</a>
-<div class="text mt-3 float-right d-block">
-<h3 class="heading"><a href="#">Data Analytics Platform Deployment</a></h3>
-<p>Designed and deployed a scalable AWS-based data analytics platform using Apache Spark and Elasticsearch, reducing processing time by 40% through automated pipelines. Implemented Infrastructure as Code (IaC) with Terraform to provision and manage AWS resources, resulting in a 30% reduction in infrastructure costs.</p>
-</div>
-</div>
-</div>
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<a class="block-20 zoom-effect" href="#" style="background-image: url('images/proj_1.webp');">
-</a>
-<div class="text mt-3 float-right d-block">
-<h3 class="heading"><a href="#">MediFlow – Distributed Healthcare System</a></h3>
-<p>Engineered a microservices-based healthcare platform using Java and Spring Boot, focusing on scalability and fault tolerance. Containerized microservices with Docker and deployed them on Kubernetes, ensuring seamless scaling and load balancing across the application. Automated CI/CD pipelines with Jenkins and GitLab, leading to a 50% reduction in deployment time.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Achievements Section -->
-<section class="ftco-section" id="achievements-section">
-<div class="container">
-<div class="row justify-content-center mb-5 pb-5">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h1 class="big big-2">Achievements</h1>
-<h2 class="mb-4">Certifications &amp; Awards</h2>
-<p>Here are some of the recognitions I have received for my contributions and expertise in the field of DevOps.</p>
-</div>
-</div>
-<!-- HashiCorp Certification -->
-<div class="row d-flex align-items-center mb-5">
-<div class="col-md-8 ftco-animate">
-<div class="text mt-3 float-left d-block">
-<h3 class="heading">HashiCorp Certified: Terraform Associate</h3>
-<p>
-                Successfully completed the HashiCorp Certified Terraform Associate certification. This demonstrates my proficiency in understanding infrastructure as code (IaC) concepts, best practices, and managing resources using Terraform.
-                <br/><br/>
-<a aria-label="View HashiCorp Terraform Certification" class="btn btn-primary py-3 px-4" href="https://www.credly.com/badges/9f3e2c5f-756c-411b-9512-3e2a5a3bba2e/" target="_blank">View Certification</a>
-</p>
-</div>
-</div>
-<div class="col-md-4 ftco-animate text-center">
-<img alt="HashiCorp Terraform Certification Badge" class="img-fluid" src="images/badge.webp" style="max-width: 200px;"/>
-</div>
-</div>
-<!-- AWS Certification -->
-<div class="row d-flex align-items-center mb-5">
-<div class="col-md-8 ftco-animate">
-<div class="text mt-3 float-left d-block">
-<h3 class="heading">AWS Certified Solutions Architect – Associate</h3>
-<p>
-                Validated expertise in designing secure, scalable, and cost-effective solutions on AWS. Proficient in AWS services, architecture best practices, and cloud security.
-                <br/><br/>
-<a aria-label="View AWS Solutions Architect Certification" class="btn btn-primary py-3 px-4" href="https://www.credly.com/badges/5e0f7285-9d88-4188-9d16-6b6d4d18dfbc/" target="_blank">View Certification</a>
-</p>
-</div>
-</div>
-<div class="col-md-4 ftco-animate text-center">
-<img alt="AWS Solutions Architect Certification Badge" class="img-fluid" src="images/image.webp" style="max-width: 200px;"/>
-</div>
-</div>
-<!-- Microsoft Certified: Azure Fundamentals -->
-<div class="row d-flex align-items-center mb-5">
-<div class="col-md-8 ftco-animate">
-<div class="text mt-3 float-left d-block">
-<h3 class="heading">Microsoft Certified: Azure Fundamentals</h3>
-<p>
-                Earned the Microsoft Certified: Azure Fundamentals certification, demonstrating a foundational understanding of cloud services and Azure concepts, including core solutions, management tools, general security, and network features.
-                <br/><br/>
-<a aria-label="View Microsoft Certification" class="btn btn-primary py-3 px-4" href="https://learn.microsoft.com/en-gb/users/harshavemula-8038/credentials/d75543dbbfd14732?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank">View Certification</a>
-</p>
-</div>
-</div>
-<div class="col-md-4 ftco-animate text-center">
-<img alt="Microsoft Certified Fundamentals Badge" class="img-fluid" src="images/microsoft-certified-fundamentals-badge.svg" style="max-width: 200px;"/>
-</div>
-</div>
-<!-- GitHub Actions Certification -->
-<div class="row d-flex align-items-center mb-5">
-<div class="col-md-8 ftco-animate">
-<div class="text mt-3 float-left d-block">
-<h3 class="heading">GitHub Actions Certification</h3>
-<p>
-                Earned the GitHub Actions certification, demonstrating proficiency in automating workflows, implementing CI/CD pipelines, and leveraging GitHub Actions for continuous integration and deployment. Skilled in creating custom workflows, managing secrets, and optimizing automation processes.
-                <br/><br/>
-<a aria-label="View GitHub Actions Certification" class="btn btn-primary py-3 px-4" href="https://learn.microsoft.com/en-gb/users/saiharshavemula-8479/credentials/6f49d5290d133059?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank">View Certification</a>
-</p>
-</div>
-</div>
-<div class="col-md-4 ftco-animate text-center">
-<img alt="GitHub Actions Certification Badge" class="img-fluid" src="images/github-actions-badge.webp" style="max-width: 200px;"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Conferences Section -->
-<section class="ftco-section" id="conferences-section">
-<div class="container">
-<div class="row justify-content-center mb-5 pb-5">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h1 class="big big-2">Conferences</h1>
-<h2 class="mb-4">Conference Presentations</h2>
-<p>Here are my research presentations and poster sessions at major conferences.</p>
-</div>
-</div>
-<!-- AGU Conference Presentation -->
-<div class="row mb-5">
-<div class="col-md-12 ftco-animate">
-<div class="text mt-3 d-block">
-<h3 class="heading">American Geophysical Union (AGU) Fall Meeting 2024</h3>
-<h4>Research to Operations Hydrologic Consortium (R2OHC) Platform</h4>
-<p>
-                Presented a comprehensive poster on the R2OHC (Research to Operations Hybrid Cloud) Platform at AGU Fall Meeting 2024. As part of the CIROH Cyberinfrastructure team at the University of Alabama, I contributed to developing a multi-cloud infrastructure combining AWS, Google Cloud, Azure, and on-premises HPC resources to support hydrological modeling. The platform serves 28 consortium institutions and enables computationally intensive NextGen water simulations through containerized workflows (Docker/Singularity), managed JupyterHub environments, and Infrastructure as Code practices.
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            DevOps Engineer · Open to new roles
+          </p>
+          <h1 class="hero__title">
+            I turn infrastructure into <em>code</em>, and code into production.
+          </h1>
+          <p class="hero__lede">
+            I'm Sai Harsha Vemula, a DevOps engineer with 4+ years across AWS, Kubernetes, Terraform
+            and CI/CD. I build cloud platforms that are secure, observable and cost-efficient, from
+            enterprise software to national-scale research systems.
+          </p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="resume/Sai_Harsha_Vemula_Resume.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+              Resume
+            </a>
+            <a class="btn btn--ghost" href="https://calendly.com/vemulasaiharsha/30min" target="_blank" rel="noopener">Book a 30-min call</a>
+            <button class="btn btn--link" type="button" data-open-chat>
+              Ask my AI assistant <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <ul class="hero__meta" aria-label="Quick facts">
+            <li><span>Based in</span>Hyderabad, India</li>
+            <li><span>Focus</span>AWS · IaC · Security</li>
+            <li><span>Certified</span>AWS SAA · Terraform</li>
+            <li><span>Community</span>AWS Community Builder</li>
+          </ul>
+        </div>
+
+        <!-- Signature: a profile summary styled as a config file -->
+        <div class="profile-card">
+          <div class="profile-card__bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="profile-card__title mono">~/harsha/profile.yaml</span>
+            <span class="profile-card__badge mono"><span class="status-dot" aria-hidden="true"></span>available</span>
+          </div>
+          <dl class="profile-card__yaml mono" aria-label="Profile summary">
+            <div><dt>name:</dt><dd>Sai Harsha Vemula</dd></div>
+            <div><dt>role:</dt><dd>DevOps Engineer</dd></div>
+            <div><dt>experience:</dt><dd>4+ years</dd></div>
+            <div><dt>cloud:</dt><dd>AWS, Azure</dd></div>
+            <div><dt>iac:</dt><dd>Terraform, Ansible, CloudFormation</dd></div>
+            <div><dt>containers:</dt><dd>Docker, Kubernetes, Helm</dd></div>
+            <div><dt>ci_cd:</dt><dd>GitHub Actions, Argo CD, Jenkins, GitLab</dd></div>
+            <div><dt>security:</dt><dd>GuardDuty, Security Hub, Trivy, SonarQube</dd></div>
+            <div><dt>observability:</dt><dd>Prometheus, Grafana, CloudWatch, ELK</dd></div>
+            <div><dt>certified:</dt><dd>AWS SAA, Terraform, GitHub Actions</dd></div>
+            <div><dt>location:</dt><dd>Hyderabad, India</dd></div>
+            <div><dt>status:</dt><dd>open to new roles</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="stats" aria-label="Highlights">
+          <div class="stat"><dt>Years in DevOps &amp; cloud</dt><dd><span data-count="4">4</span>+</dd></div>
+          <div class="stat"><dt>Faster infrastructure deployments</dt><dd><span data-count="45">45</span>%</dd></div>
+          <div class="stat"><dt>Monthly cloud spend reduced</dt><dd><span data-count="30">30</span>%</dd></div>
+          <div class="stat"><dt>Faster incident response</dt><dd><span data-count="40">40</span>%</dd></div>
+          <div class="stat"><dt>Service uptime delivered</dt><dd>99.9%</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="section__head">
+          <p class="eyebrow"><span class="mono">01</span> About</p>
+          <h2>From commit to production, reliably</h2>
+        </div>
+        <div class="about__grid">
+          <figure class="about__photo reveal">
+            <img src="assets/img/about-me.webp" alt="Portrait of Sai Harsha Vemula" width="600" height="900" loading="lazy">
+            <figcaption class="mono">~/harsha $ whoami</figcaption>
+          </figure>
+          <div class="about__body reveal">
+            <p class="lead">
+              I'm a DevOps engineer who builds cloud infrastructure that's secure, automated and
+              cost-efficient. In 4+ years I've run production systems at Vitrana and at the University
+              of Alabama, where I owned the AWS platform behind a national-scale water-forecasting system.
+            </p>
+            <p>
+              I work mostly on AWS, with some Azure. I automate everything I can with Terraform, Ansible
+              and Python, and ship containers through CI/CD and GitOps pipelines on Docker and Kubernetes.
+            </p>
+            <p>
+              I treat security, observability and cost as part of the design: least-privilege IAM,
+              vulnerability scanning in every pipeline, monitoring that shortens incident response, and
+              regular audits that keep cloud bills in check.
+            </p>
+            <p>
+              I'm looking for my next role on a DevOps, platform or cloud-infrastructure team.
+            </p>
+
+            <figure class="about__wide">
+              <button type="button" data-lightbox="assets/img/whiteboard.webp" data-caption="Whiteboarding a cloud architecture.">
+                <img src="assets/img/whiteboard.webp" alt="Sai Harsha Vemula taking a selfie in front of a whiteboard covered in a hand-drawn cloud architecture diagram" width="1600" height="1200" loading="lazy">
+              </button>
+              <figcaption class="mono">Most designs start on a whiteboard.</figcaption>
+            </figure>
+
+            <div class="skills" aria-label="Skills">
+              <div class="skills__group">
+                <h3>Cloud</h3>
+                <ul><li>AWS</li><li>Azure</li><li>Step Functions</li><li>Lambda</li><li>EC2 / Graviton</li><li>S3</li><li>Bedrock</li></ul>
+              </div>
+              <div class="skills__group">
+                <h3>Infrastructure as Code</h3>
+                <ul><li>Terraform</li><li>Ansible</li><li>CloudFormation</li></ul>
+              </div>
+              <div class="skills__group">
+                <h3>Containers &amp; Delivery</h3>
+                <ul><li>Docker</li><li>Kubernetes</li><li>Helm</li><li>GitHub Actions</li><li>Argo CD</li><li>Jenkins</li><li>GitLab CI</li></ul>
+              </div>
+              <div class="skills__group">
+                <h3>Security</h3>
+                <ul><li>GuardDuty</li><li>Security Hub</li><li>CloudTrail</li><li>IAM Access Analyzer</li><li>AWS Config</li><li>Trivy</li><li>Grype</li><li>SonarQube</li></ul>
+              </div>
+              <div class="skills__group">
+                <h3>Observability</h3>
+                <ul><li>CloudWatch</li><li>Prometheus</li><li>Grafana</li><li>ELK Stack</li></ul>
+              </div>
+              <div class="skills__group">
+                <h3>Languages</h3>
+                <ul><li>Python</li><li>Bash</li><li>Java</li><li>SQL</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow"><span class="mono">02</span> Experience</p>
+            <h2>Where I've shipped</h2>
+          </div>
+          <a class="btn btn--ghost btn--sm" href="resume/Sai_Harsha_Vemula_Resume.pdf" target="_blank" rel="noopener">Full resume (PDF)</a>
+        </div>
+
+        <ol class="timeline">
+          <li class="role reveal">
+            <div class="role__when mono">Jul 2025 — Sep 2026</div>
+            <div class="role__card">
+              <header>
+                <h3>DevOps Engineer</h3>
+                <p class="role__org">Alabama Water Institute / CIROH, University of Alabama <span>Tuscaloosa, AL</span></p>
+              </header>
+              <p class="role__summary">
+                Owned production AWS infrastructure for the NextGen Research DataStream (NRDS): <strong>1,213</strong> EventBridge
+                schedules, <strong>24</strong> Lambda functions, <strong>26</strong> AMIs, <strong>27</strong> IAM roles and
+                <strong>20</strong> S3 buckets powering daily nationwide hydrologic forecasts.
               </p>
-</div>
-</div>
-</div>
-<div class="row mb-4">
-<div class="col-md-12 ftco-animate text-center">
-<a href="AGU_Poster_R2OHC.pdf" target="_blank">
-<img alt="AGU Conference Poster Preview" class="img-fluid" src="images/agu-poster-preview.png" style="max-width: 800px; border: 2px solid #ffbd39; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"/>
-</a>
-<p class="mt-2"><small>Click to view full poster PDF</small></p>
-</div>
-</div>
-<div class="row mb-4">
-<div class="col-md-12 ftco-animate">
-<div class="text d-block">
-<p><strong>Key Platform Achievements:</strong></p>
-<ul>
-<li>13,000+ NGIAB Docker downloads supporting containerized hydrologic modeling</li>
-<li>1,400+ daily CONUS-wide NextGen executions via NRDS (NextGen Research Datastream)</li>
-<li>SQL access to 2.7 million NWM forecast points for comprehensive water resource analysis</li>
-<li>Support for 405+ researchers across 151 active research projects</li>
-<li>Multi-cloud infrastructure automation with Terraform and AWS Step Functions</li>
-<li>Cost optimization and security compliance across 28 consortium institutions</li>
-</ul>
-<p>
-                <a aria-label="View LinkedIn Post" class="btn btn-primary py-3 px-4" href="https://www.linkedin.com/feed/update/urn:li:activity:7407970062692798465/" target="_blank">View LinkedIn Post</a>
-                <a aria-label="Download Poster PDF" class="btn btn-primary py-3 px-4" href="AGU_Poster_R2OHC.pdf" target="_blank">Download Poster</a>
-</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Blogs Section -->
-<section class="ftco-section" id="blogs-section">
-<div class="container">
-<div class="row justify-content-center mb-5 pb-5">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h1 class="big big-2">My Blogs</h1>
-<h2 class="mb-4">Explore My Articles</h2>
-<p>Here are some of my recent blog posts where I discuss various topics related to DevOps, cloud technologies, and software engineering.</p>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-md-8 text-center">
-<a class="btn btn-primary py-4 px-5" href="https://medium.com/@harshaharshuharsha" target="_blank">Read My Blogs</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Testimonials Section -->
-<section class="ftco-section" id="testimonials-section">
-<div class="container">
-<div class="row justify-content-center mb-5 pb-5">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h1 class="big big-2">Testimonials</h1>
-<h2 class="mb-4">What People Say</h2>
-<p>Here are some testimonials from my colleagues and mentors who have worked closely with me.</p>
-</div>
-</div>
-<div class="row">
-<!-- Testimonial 1 -->
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text mt-3 float-right d-block">
-<h3 class="heading">Avnish Joy</h3>
-<p class="position">DevOps Team Manager at Vitrana</p>
-<p>
-              "I had the pleasure of working closely with Sai Harsha in my team as a DevOps Engineer. He consistently demonstrated his expertise in areas such as CI/CD pipelines, automation, and cloud infrastructure management. Sai is technically proficient and an excellent team player, always willing to collaborate and share knowledge. His proactive attitude and dedication ensured our projects were completed efficiently and successfully."
-            </p>
-</div>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text mt-3 float-right d-block">
-<h3 class="heading">Tharun Yerramreddy</h3>
-<p class="position">Team Lead of DevOps Team at Vitrana</p>
-<p>
-              "As Sai Harsha's lead, I am consistently impressed by his expertise in AWS, DevOps, Kubernetes, Shell Scripting, and GitLab. He has been instrumental in managing complex systems and implementing seamless CI/CD processes. His technical expertise and problem-solving capabilities make him an invaluable asset to any team."
-            </p>
-</div>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text mt-3 float-right d-block">
-<h3 class="heading">Abibalaji</h3>
-<p class="position">Team Lead of Java Team at Vitrana</p>
-<p>
-              "Sai Harsha is an exceptionally talented and dedicated DevOps Engineer. His outstanding work in formalizing our pipeline architecture significantly improved our workflows. Sai is a team player with strong communication skills and a commitment to delivering results. I am confident Harsha will bring excellence and value to any organization he is associated with."
-            </p>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-<!-- Testimonial 4 -->
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text mt-3 float-right d-block">
-<h3 class="heading">Shanmukh Sridhar</h3>
-<p class="position">Python Developer at Vitrana</p>
-<p>
-              "I had the pleasure of working with Harsha, where he consistently demonstrated exceptional skills in cloud engineering and DevOps practices. His expertise in AWS, Docker, GitLab, Terraform, and CI/CD pipelines made him a go-to person for automation. Harsha excels in managing complex projects and delivering scalable, efficient solutions. He is also a fantastic team player."
-            </p>
-</div>
-</div>
-</div>
-<!-- Testimonial 5 -->
-<div class="col-md-4 d-flex ftco-animate">
-<div class="blog-entry justify-content-end">
-<div class="text mt-3 float-right d-block">
-<h3 class="heading">Vanshika Bhatt</h3>
-<p class="position">DevOps Engineer at Vitrana</p>
-<p>
-              "I have had the opportunity to work with Harsha in his role as a DevOps Engineer and can attest to his technical expertise in GitLab, AWS, Kubernetes, and Terraform. His meticulousness and ability to find creative solutions to complex problems have been a valuable asset to our team."
-            </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-<div class="container">
-<div class="row justify-content-center mb-5 pb-3">
-<div class="col-md-7 heading-section text-center ftco-animate">
-<h1 class="big big-2">Contact</h1>
-<h2 class="mb-4">Contact Me</h2>
-<p>Below are the details to reach out to me!</p>
-</div>
-</div>
-<div class="row d-flex contact-info mb-5">
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box p-4 text-center">
-<div class="icon d-flex align-items-center justify-content-center">
-<span class="icon-map-signs"></span>
-</div>
-<h3 class="mb-4">Address</h3>
-<p>Kansas City, Missouri</p>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box p-4 text-center">
-<div class="icon d-flex align-items-center justify-content-center">
-<span class="icon-phone2"></span>
-</div>
-<h3 class="mb-4">Contact Number</h3>
-<p><a href="tel://8166144801">+ 816-614-4801</a></p>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box p-4 text-center">
-<div class="icon d-flex align-items-center justify-content-center">
-<span class="icon-paper-plane"></span>
-</div>
-<h3 class="mb-4">Email Address</h3>
-<p><a href="mailto:vemulasaiharsha@gmail.com">vemulasaiharsha@gmail.com</a></p>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box p-4 text-center">
-<div class="icon d-flex align-items-center justify-content-center">
-<span class="icon-globe"></span>
-</div>
-<h3 class="mb-4">Download Resume</h3>
-<p><a href="https://saiharshavemula.com/resume/Sai_Harsha_Vemula_Resume.pdf" target="_blank">Download PDF</a></p>
-</div>
-</div>
-</div>
-<div class="container">
-<br/><br/>
-<div class="row justify-content-center">
-<div class="col-md-7 ftco-animate text-center">
-<h2>Wanna Have a meeting and know more about me? <a class="btn btn-primary py-3 px-5" href="https://calendly.com/vemulasaiharsha/30min">Schedule a Meeting</a> </h2>
-</div>
-</div>
-<br/>
-<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-<li class="ftco-animate normal-txt">Find me on  </li>
-<li class="ftco-animate"><a href="https://www.linkedin.com/in/sai-harsha-vemula-1a611a1a3"><span class="icon-linkedin"></span></a></li>
-</ul>
-<br/>
-</div>
-</div>
-</section>
-<!-- loader -->
-<div class="show fullscreen" id="ftco-loader"><svg class="circular" height="48px" width="48px"><circle class="path-bg" cx="24" cy="24" fill="none" r="22" stroke="#eeeeee" stroke-width="4"></circle><circle class="path" cx="24" cy="24" fill="none" r="22" stroke="#F96D00" stroke-miterlimit="10" stroke-width="4"></circle></svg></div>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<script src="js/main.js"></script>
+                <h4 class="role__group">Infrastructure as code</h4>
+                <ul class="role__points">
+                  <li>Restructured NRDS Terraform into one root module with shared orchestration and pluggable datastream modules. New datastreams (routing-only, forcing, qkrig) now ship with <strong>zero workflow changes</strong>. <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/317" target="_blank" rel="noopener">ngen-datastream#317</a> <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/318" target="_blank" rel="noopener">ngen-datastream#318</a> <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/323" target="_blank" rel="noopener">ngen-datastream#323</a></li>
+                  <li>Replaced Python-generated JSON with native Terraform templates and added readable Step Functions execution names for every model, run type and VPU. <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/289" target="_blank" rel="noopener">ngen-datastream#289</a></li>
+                  <li>Replaced long-lived AWS keys with GitHub OIDC federation across repositories, and enabled remote state locking with automated drift detection. <a class="pr mono" href="https://github.com/CIROH-UA/datastreamcli/pull/90" target="_blank" rel="noopener">datastreamcli#90</a> <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/339" target="_blank" rel="noopener">ngen-datastream#339</a></li>
+                  <li>Added qkrig (USGS streamflow kriging) as a daily NRDS datastream on Graviton, publishing 24 hourly NetCDF outputs in about 38 minutes a day. <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/364" target="_blank" rel="noopener">ngen-datastream#364</a></li>
+                </ul>
+                <h4 class="role__group">CI/CD</h4>
+                <ul class="role__points">
+                  <li>Moved CI builds from GitHub-hosted x86 runners to AWS CodeBuild on Graviton, cutting CI/CD compute costs by <strong>~95%</strong> and enabling native amd64/arm64 images. <a class="pr mono" href="https://github.com/CIROH-UA/datastreamcli/commit/d637e392cdd02490876a015d94c8373d30244523" target="_blank" rel="noopener">datastreamcli@d637e39</a> <a class="pr mono" href="https://github.com/CIROH-UA/datastreamcli/pull/49" target="_blank" rel="noopener">datastreamcli#49</a></li>
+                  <li>Consolidated <strong>24</strong> fragmented GitHub Actions workflows into <strong>1</strong> reusable, parameterized pipeline for build, scan and deploy.</li>
+                  <li>Built multi-architecture build, test and publish pipelines for the DataStream CLI and ForcingProcessor, publishing images to Docker Hub and GHCR. ARM images are built and tested on Graviton through the same Step Functions state machine as production. <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/246" target="_blank" rel="noopener">ngen-datastream#246</a> <a class="pr mono" href="https://github.com/CIROH-UA/forcingprocessor/pull/13" target="_blank" rel="noopener">forcingprocessor#13</a> <a class="pr mono" href="https://github.com/CIROH-UA/forcingprocessor/pull/25" target="_blank" rel="noopener">forcingprocessor#25</a> <a class="pr mono" href="https://github.com/CIROH-UA/datastreamcli/pull/104" target="_blank" rel="noopener">datastreamcli#104</a></li>
+                  <li>Added Trivy scanning to every x86 and ARM image build, with results published to GitHub's Security tab as SARIF and kept as JSON artifacts. <a class="pr mono" href="https://github.com/CIROH-UA/forcingprocessor/pull/18" target="_blank" rel="noopener">forcingprocessor#18</a> <a class="pr mono" href="https://github.com/CIROH-UA/forcingprocessor/pull/20" target="_blank" rel="noopener">forcingprocessor#20</a></li>
+                  <li>Made builds faster and more reliable: reuse unchanged dependency images on ARM instead of rebuilding, retry flaky pushes, move Python images from pip to uv (3.9 → 3.11), and drop QEMU/buildx from x86 jobs to stop stale-image pulls. <a class="pr mono" href="https://github.com/CIROH-UA/forcingprocessor/pull/63" target="_blank" rel="noopener">forcingprocessor#63</a> <a class="pr mono" href="https://github.com/CIROH-UA/datastreamcli/pull/76" target="_blank" rel="noopener">datastreamcli#76</a> <a class="pr mono" href="https://github.com/CIROH-UA/datastreamcli/pull/84" target="_blank" rel="noopener">datastreamcli#84</a></li>
+                  <li>Engineered an ARM self-hosted runner fleet with Lambda-driven start/stop scheduling and automated disk cleanup, eliminating idle compute outside working hours.</li>
+                </ul>
+                <h4 class="role__group">Security</h4>
+                <ul class="role__points">
+                  <li>Detected, contained and remediated a live crypto-mining incident in <strong>under 2 hours</strong>, rotating every exposed credential with zero forecast downtime.</li>
+                  <li>Hardened the platform afterwards: Trivy image scanning with Slack alerts, weekly Gitleaks secret scans, Checkov policy checks in CI, and least-privilege IAM across the orchestration layer. <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/328" target="_blank" rel="noopener">ngen-datastream#328</a></li>
+                </ul>
+                <h4 class="role__group">Reliability &amp; cost</h4>
+                <ul class="role__points">
+                  <li>Built an automated output-validation pipeline and a <a class="text-link" href="https://ciroh-community-ngen-datastream.s3.amazonaws.com/status/dashboard.html" target="_blank" rel="noopener">public status dashboard</a> that checks forecast completeness across all VPUs after every national run, replacing hours of manual checks.</li>
+                  <li>Made the instance-starter Lambda retry across Availability Zones on capacity errors, so a sold-out zone no longer fails a forecast run. <a class="pr mono" href="https://github.com/CIROH-UA/ngen-datastream/pull/385" target="_blank" rel="noopener">ngen-datastream#385</a></li>
+                  <li>Cut monthly AWS spend by <strong>30%</strong> with EBS audits, EC2 right-sizing, S3 Intelligent-Tiering and VPC gateway endpoints.</li>
+                  <li>Built CloudWatch dashboards for Lambda health and pipeline status, with SSM session logging to S3 for audit trails.</li>
+                  <li>Introduced AI-assisted code review (CodeRabbit) across the organization and wrote the CIROH guide to <a class="text-link" href="https://github.com/CIROH-UA/ciroh-ua_website/pull/486" target="_blank" rel="noopener">OIDC for GitHub Actions with AWS</a>.</li>
+                </ul>
+              <a class="gh-activity" href="https://github.com/search?q=org%3ACIROH-UA+author%3Aharshavemula-ua&amp;type=pullrequests" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                <span><b>143</b> pull requests · <b>90</b> merged · <b>8</b> CIROH-UA repositories</span>
+                <span class="gh-activity__cta mono">View on GitHub ↗</span>
+              </a>
+              <ul class="tags"><li>Terraform</li><li>Step Functions</li><li>GitHub Actions</li><li>CodeBuild</li><li>OIDC</li><li>Graviton</li><li>Checkov</li></ul>
+            </div>
+          </li>
 
-<script src="chatbot.js"></script>
-<button id="chat-toggle" onclick="showChat()" style="display: none;">💬</button>
-<div id="chat-widget">
-<div id="chat-header">
-    Ask About Me 💬
-    <button id="chat-close" onclick="closeChat()">×</button>
-</div>
-<div id="chat-body">
+          <li class="role reveal">
+            <div class="role__when mono">Jul 2021 — Jun 2023</div>
+            <div class="role__card">
+              <header>
+                <h3>Software Engineer — DevOps</h3>
+                <p class="role__org">Vitrana, Inc. <span>Bangalore, India</span></p>
+              </header>
+              <ul class="role__points">
+                <li>Deployed Prometheus and Grafana monitoring and alerting, cutting incident response time by <strong>40%</strong> and lifting service uptime to <strong>99.9%</strong>.</li>
+                <li>Built and tuned Kubernetes manifests and Helm charts for containerized healthcare applications, speeding up deployments by <strong>20%</strong> and cutting downtime by <strong>30%</strong>.</li>
+                <li>Implemented Argo CD for GitOps continuous delivery, removing manual release steps and cutting deployment-drift incidents by <strong>30%</strong>.</li>
+                <li>Applied Terraform IaC to automate provisioning, <strong>halving</strong> environment setup time and eliminating configuration drift.</li>
+                <li>Containerized microservices with Docker and Docker Compose, reducing deployment issues by <strong>35%</strong>.</li>
+                <li>Designed AWS VPCs with segmented subnets, CIDR allocation and network ACLs for isolation and security.</li>
+                <li>Integrated Trivy and SonarQube into CI/CD, and managed AWS WAF and Secrets Manager with automated credential rotation.</li>
+                <li>Managed RDS with automated failover and disaster recovery, cutting database downtime by <strong>20%</strong>, and added Redis/ElastiCache caching to reduce database load.</li>
+              </ul>
+              <ul class="tags"><li>Kubernetes</li><li>Helm</li><li>Argo CD</li><li>Prometheus</li><li>Terraform</li><li>AWS WAF</li></ul>
+            </div>
+          </li>
 
-</div>
-<input id="chat-input" placeholder="Ask me about Sai Harsha..." type="text"/>
-</div>
+          <li class="role reveal">
+            <div class="role__when mono">Aug 2020 — Jul 2021</div>
+            <div class="role__card">
+              <header>
+                <h3>Associate Software Engineer</h3>
+                <p class="role__org">Vitrana, Inc. <span>Bangalore, India</span></p>
+              </header>
+              <ul class="role__points">
+                <li>Operated and tuned <strong>300+</strong> Docker containers in production, reducing deployment errors by <strong>25%</strong>.</li>
+                <li>Automated monitoring and deployment workflows with Bash and Python, cutting manual intervention by <strong>40%</strong>.</li>
+                <li>Automated configuration management with Ansible, reducing manual configuration errors by <strong>35%</strong>.</li>
+                <li>Deployed the ELK stack for centralized logging, speeding up issue detection and resolution by <strong>30%</strong>.</li>
+                <li>Wrote AWS Lambda automation for EBS snapshot backups, ECR cleanup, log cleanup and metric-based EC2 scaling.</li>
+                <li>Contributed to migrating legacy applications to cloud-native architectures, cutting maintenance costs by <strong>15%</strong>.</li>
+                <li>Integrated Azure AD with SSO and MFA, and designed IAM roles and Kubernetes RBAC policies for secure access control.</li>
+                <li>Coordinated multi-environment releases, reducing rollback incidents by <strong>30%</strong>, and built a real-time analytics dashboard with QuickSight, Redshift and Glue.</li>
+              </ul>
+              <ul class="tags"><li>Docker</li><li>Ansible</li><li>Lambda</li><li>ELK</li><li>Azure AD</li></ul>
+            </div>
+          </li>
+        </ol>
+
+        <div class="edu">
+          <h3 class="edu__title">Education</h3>
+          <div class="edu__grid">
+            <article class="edu__item reveal">
+              <figure class="edu__photo">
+                <img src="assets/img/edu/umkc-campus.webp" alt="Haag Hall on the UMKC Quad" width="1080" height="472" loading="lazy">
+                <figcaption>Photo: 1mikegrn, <a href="https://commons.wikimedia.org/wiki/File:Haag_Hall,_located_on_the_UMKC_Quad.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
+              </figure>
+              <div class="edu__body">
+                <span class="edu__logo"><img src="assets/img/edu/umkc-logo.webp" alt="UMKC logo" width="221" height="96" loading="lazy"></span>
+                <p class="mono">Aug 2023 — Dec 2024</p>
+                <h4>Master's in Computer Science</h4>
+                <p>University of Missouri–Kansas City · Kansas City, MO</p>
+                <p class="edu__grade mono">GPA 3.8 / 4.0</p>
+              </div>
+            </article>
+            <article class="edu__item reveal">
+              <figure class="edu__photo">
+                <img src="assets/img/edu/vit-campus.webp" alt="Technology Tower at Vellore Institute of Technology" width="800" height="350" loading="lazy">
+                <figcaption>Photo: Wikindinator, <a href="https://commons.wikimedia.org/wiki/File:Technology_Tower(VIT).jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></figcaption>
+              </figure>
+              <div class="edu__body">
+                <span class="edu__logo"><img src="assets/img/edu/vit-logo.webp" alt="Vellore Institute of Technology logo" width="358" height="96" loading="lazy"></span>
+                <p class="mono">Jun 2016 — Jun 2021</p>
+                <h4>M.Tech Integrated, Software Engineering</h4>
+                <p>Vellore Institute of Technology · Vellore, India</p>
+                <p class="edu__grade mono">CGPA 8.80 / 10</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow"><span class="mono">03</span> Projects</p>
+          <h2>Selected work</h2>
+        </div>
+
+        <article class="feature reveal">
+          <div class="feature__copy">
+            <p class="feature__kicker mono">Featured · CIROH · Open source</p>
+            <h3>NGEN-Datastream: NextGen National Water Model Research DataStream</h3>
+            <p>
+              I led DevOps and infrastructure automation for the Research DataStream, which has
+              completed <strong>68,000+</strong> hydrologic model runs. Each day an EventBridge schedule
+              starts a Step Functions workflow for every one of <strong>21 VPUs</strong>. It launches a
+              Graviton instance from a baked AMI, runs the DataStream CLI, polls until the run finishes,
+              confirms the output in S3, and then tears everything down.
+            </p>
+            <div class="feature__links">
+              <a class="btn btn--primary btn--sm" href="https://github.com/CIROH-UA/ngen-datastream" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                View on GitHub
+              </a>
+              <a class="btn btn--ghost btn--sm" href="https://ciroh-community-ngen-datastream.s3.amazonaws.com/status/dashboard.html" target="_blank" rel="noopener">
+                <span class="status-dot" aria-hidden="true"></span>
+                Live run dashboard
+              </a>
+              <a class="btn btn--ghost btn--sm" href="https://datastream.ciroh.org/index.html" target="_blank" rel="noopener">Browse output data</a>
+              <a class="btn btn--ghost btn--sm" href="https://docs.google.com/presentation/d/1sCNiidAg9-OVWw4FbCuVGwpidZwmKWMcmWRzX00Wzq8/edit?usp=sharing" target="_blank" rel="noopener">Project slides</a>
+            </div>
+          </div>
+          <div class="feature__side">
+              <ul class="feature__list">
+                <li><span>IaC</span>Multi-environment Terraform pipeline with Step Functions orchestration</li>
+                <li><span>CI/CD</span>GitHub Actions for AMI creation, testing and validation, with health-check auto-rerun and cost-protection limits</li>
+                <li><span>Build</span>Multi-architecture Docker images (x86_64 + ARM64 / Graviton 4)</li>
+                <li><span>Ops</span>Scoped IAM policies, CloudWatch monitoring and S3 lifecycle policies to keep costs down</li>
+              </ul>
+          </div>
+          <button class="feature__media" type="button" data-lightbox="assets/img/ngen_aws_diagram.webp" data-caption="NRDS daily workflow: EventBridge → Step Functions → Lambda-driven EC2 lifecycle on Graviton 4.">
+            <img src="assets/img/ngen_aws_diagram.webp" alt="AWS architecture diagram: an EventBridge daily schedule triggers a Step Functions state machine with EC2StarterFromAMI, Commander, EC2Poller, Choice, RunChecker and EC2Stopper Lambda steps." loading="lazy" width="2000" height="1081">
+            <span class="feature__zoom mono">Click to enlarge ⤢</span>
+          </button>
+        </article>
+
+        <div class="cards">
+          <article class="card reveal">
+            <p class="card__kicker mono">Data platform</p>
+            <h3>Data Analytics Platform Deployment</h3>
+            <p>Designed and deployed a scalable AWS data analytics platform on Apache Spark and Elasticsearch. Automated pipelines cut processing time by <strong>40%</strong>, and Terraform-managed infrastructure cut costs by <strong>30%</strong>.</p>
+            <ul class="tags"><li>AWS</li><li>Spark</li><li>Elasticsearch</li><li>Terraform</li></ul>
+          </article>
+          <article class="card reveal">
+            <p class="card__kicker mono">Microservices</p>
+            <h3>MediFlow: Distributed Healthcare System</h3>
+            <p>Built a microservices healthcare platform in Java and Spring Boot, focused on scalability and fault tolerance. It runs as Docker containers on Kubernetes, and Jenkins/GitLab pipelines cut deployment time by <strong>50%</strong>.</p>
+            <ul class="tags"><li>Spring Boot</li><li>Docker</li><li>Kubernetes</li><li>Jenkins</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THIS SITE ============ -->
+    <section class="section section--alt" id="stack">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow"><span class="mono">04</span> How this site is built</p>
+            <h2>Fully serverless, under <em>$1/month</em></h2>
+          </div>
+          <a class="btn btn--ghost btn--sm" href="https://app.notion.com/p/39d3138f3ea2816fa31bd12bf63cecb9" target="_blank" rel="noopener">Read the architecture write-up</a>
+        </div>
+        <p class="section__intro">
+          Static files sit in a private S3 bucket behind CloudFront, on a Route 53 domain. The chat
+          assistant goes through API Gateway to a Lambda that calls Amazon Bedrock (Claude Haiku 4.5),
+          wrapped in Bedrock Guardrails. It knows my resume, so you can ask it anything.
+        </p>
+        <figure class="arch reveal">
+          <svg viewBox="0 0 1000 300" role="img" aria-labelledby="arch-t arch-d">
+            <title id="arch-t">Portfolio architecture</title>
+            <desc id="arch-d">Visitors reach Route 53, then CloudFront, which reads from a private S3 bucket. Chat requests go to API Gateway, then Lambda, then Amazon Bedrock with Guardrails.</desc>
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" class="arch__arrowhead"/>
+              </marker>
+            </defs>
+            <!-- static path -->
+            <text x="20" y="34" class="arch__lane">STATIC SITE</text>
+            <g class="arch__node"><rect x="20" y="52" width="150" height="64" rx="12"/><text x="95" y="80">Visitor</text><text x="95" y="100" class="arch__sub">browser</text></g>
+            <g class="arch__node"><rect x="250" y="52" width="150" height="64" rx="12"/><text x="325" y="80">Route 53</text><text x="325" y="100" class="arch__sub">harshavemula.com</text></g>
+            <g class="arch__node"><rect x="480" y="52" width="150" height="64" rx="12"/><text x="555" y="80">CloudFront</text><text x="555" y="100" class="arch__sub">CDN + TLS</text></g>
+            <g class="arch__node"><rect x="710" y="52" width="150" height="64" rx="12"/><text x="785" y="80">S3</text><text x="785" y="100" class="arch__sub">private origin (OAC)</text></g>
+            <path d="M170 84H246" class="arch__edge" marker-end="url(#arr)"/>
+            <path d="M400 84H476" class="arch__edge" marker-end="url(#arr)"/>
+            <path d="M630 84H706" class="arch__edge" marker-end="url(#arr)"/>
+            <!-- chat path -->
+            <text x="20" y="184" class="arch__lane">AI ASSISTANT</text>
+            <g class="arch__node"><rect x="20" y="202" width="150" height="64" rx="12"/><text x="95" y="230">Chat widget</text><text x="95" y="250" class="arch__sub">POST /chat</text></g>
+            <g class="arch__node"><rect x="250" y="202" width="150" height="64" rx="12"/><text x="325" y="230">API Gateway</text><text x="325" y="250" class="arch__sub">HTTP API</text></g>
+            <g class="arch__node"><rect x="480" y="202" width="150" height="64" rx="12"/><text x="555" y="230">Lambda</text><text x="555" y="250" class="arch__sub">resume + prompt</text></g>
+            <g class="arch__node arch__node--accent"><rect x="710" y="202" width="150" height="64" rx="12"/><text x="785" y="230">Bedrock</text><text x="785" y="250" class="arch__sub">Claude Haiku 4.5</text></g>
+            <path d="M170 234H246" class="arch__edge arch__edge--flow" marker-end="url(#arr)"/>
+            <path d="M400 234H476" class="arch__edge arch__edge--flow" marker-end="url(#arr)"/>
+            <path d="M630 234H706" class="arch__edge arch__edge--flow" marker-end="url(#arr)"/>
+            <g class="arch__guard"><rect x="884" y="214" width="104" height="40" rx="8"/><text x="936" y="239">Guardrails</text></g>
+            <path d="M860 234H884" class="arch__edge"/>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ TALKS ============ -->
+    <section class="section" id="talks">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow"><span class="mono">05</span> Talks &amp; posters</p>
+          <h2>Presenting the infrastructure side of science</h2>
+        </div>
+
+        <article class="talk reveal">
+          <div class="talk__media talk__media--trio">
+            <button type="button" data-lightbox="assets/img/devcon/devcon_team.webp" data-caption="With the team at CIROH DevCon 2026, University of Utah, Salt Lake City.">
+              <img src="assets/img/devcon/devcon_team.webp" alt="Sai Harsha Vemula with CIROH colleagues on a rooftop terrace at the University of Utah, with the Wasatch mountains behind them" loading="lazy" width="1600" height="1200">
+            </button>
+            <button type="button" data-lightbox="assets/img/devcon/devcon_1.webp" data-caption="Presenting the NextGen Research DataStream poster at CIROH DevCon 2026, Salt Lake City.">
+              <img src="assets/img/devcon/devcon_1.webp" alt="Sai Harsha Vemula with colleagues beside the NextGen Research DataStream poster at CIROH DevCon 2026" loading="lazy" width="1400" height="1050">
+            </button>
+            <button type="button" data-lightbox="assets/img/devcon/devcon_2.webp" data-caption="With the CIROH community at DevCon 2026, Salt Lake City.">
+              <img src="assets/img/devcon/devcon_2.webp" alt="Group photo of CIROH DevCon 2026 attendees in front of the poster session" loading="lazy" width="1400" height="1050">
+            </button>
+          </div>
+          <div class="talk__copy">
+            <p class="talk__when mono">May 27–29, 2026 · University of Utah, Salt Lake City</p>
+            <h3>CIROH DevCon 2026</h3>
+            <p class="talk__sub">4th annual CIROH Developers Conference</p>
+            <p class="talk__topic">CIROH CyberInfrastructure · NextGen Research DataStream (NRDS) · NextGen In A Box (NGIAB)</p>
+            <p>
+              I spent a few days in Salt Lake City with the CIROH community, a room full of the people
+              building the National Water Model. I presented our work on CIROH's CyberInfrastructure,
+              NRDS and NGIAB.
+            </p>
+            <p>
+              Behind the scenes, I worked with the CIROH CyberInfrastructure team to provision and
+              support the cloud resources for the entire event.
+            </p>
+            <blockquote>
+              Most of the interesting DevOps work lives in the gap between "research code" and
+              "production system". In scientific computing, cost and reliability are what make the
+              science repeatable.
+            </blockquote>
+            <a class="text-link" href="https://docs.google.com/presentation/d/1sCNiidAg9-OVWw4FbCuVGwpidZwmKWMcmWRzX00Wzq8/edit?usp=sharing" target="_blank" rel="noopener">View NRDS slides →</a>
+          </div>
+        </article>
+
+        <article class="talk talk--flip reveal">
+          <div class="talk__media talk__media--duo">
+            <button type="button" data-lightbox="assets/img/agu-2025.webp" data-caption="At the R2OHC poster session, AGU Fall Meeting 2025.">
+              <img src="assets/img/agu-2025.webp" alt="Sai Harsha Vemula and colleagues beside the R2OHC Cloud Platform poster at AGU Fall Meeting 2025" loading="lazy" width="874" height="768">
+            </button>
+            <a href="AGU_Poster_R2OHC.pdf" target="_blank" rel="noopener" class="talk__poster">
+              <img src="assets/img/agu-poster-preview.webp" alt="Preview of the R2OHC Platform poster presented at AGU Fall Meeting 2025" loading="lazy" width="1400" height="1063">
+              <span class="feature__zoom mono">Open full poster (PDF) ⤢</span>
+            </a>
+          </div>
+          <div class="talk__copy">
+            <p class="talk__when mono">Dec 2025 · New Orleans, LA</p>
+            <h3>AGU Fall Meeting 2025</h3>
+            <p class="talk__topic">Cloud Infrastructure for NextGen Water Resources Modeling: CIROH's Research to Operations Hybrid Cloud (R2OHC) Platform · Paper H41Q-1425</p>
+            <p>
+              Poster session on R2OHC, a multi-cloud stack spanning AWS, Google Cloud, Azure and
+              on-premises HPC that I helped build as part of the CIROH CyberInfrastructure team. It serves
+              <strong>28 consortium institutions</strong> and runs compute-heavy NextGen water simulations
+              through containerized workflows (Docker/Singularity), managed JupyterHub environments and IaC.
+            </p>
+            <div class="talk__links">
+              <a class="text-link" href="AGU_Poster_R2OHC.pdf" target="_blank" rel="noopener">Download poster →</a>
+              <a class="text-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7407970062692798465/" target="_blank" rel="noopener">LinkedIn post →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CERTS ============ -->
+    <section class="section section--alt" id="certs">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow"><span class="mono">06</span> Certifications</p>
+          <h2>Verified credentials</h2>
+        </div>
+        <div class="community reveal">
+          <span class="community__mark"><svg viewBox="0 0 300.73 179.82" role="img" aria-label="AWS"><path d="M84.74,65.27c0,3.74.38,6.71,1.14,8.92.76,2.22,1.84,4.61,3.24,7.18.46.82.7,1.57.7,2.27,0,1.05-.64,2.04-1.93,2.98l-6.3,4.2c-.93.58-1.81.88-2.62.88-1.05,0-2.04-.46-2.97-1.4-1.4-1.4-2.6-2.95-3.59-4.64-.99-1.69-2.01-3.64-3.06-5.86-7.82,9.22-17.62,13.83-29.4,13.83-8.4,0-15.05-2.39-19.95-7.18-4.9-4.78-7.35-11.2-7.35-19.25,0-8.51,3.03-15.37,9.1-20.56,6.06-5.19,14.23-7.79,24.5-7.79,3.38,0,6.91.26,10.59.79,3.68.53,7.5,1.26,11.46,2.19v-7.35c0-7.58-1.58-12.92-4.72-16.01-3.15-3.09-8.58-4.64-16.28-4.64-3.5,0-7.09.44-10.76,1.31-3.67.88-7.26,2.01-10.76,3.41-1.63.7-2.8,1.14-3.5,1.31-.7.17-1.22.26-1.57.26-1.4,0-2.1-1.05-2.1-3.15v-4.9c0-1.63.23-2.8.7-3.5.46-.7,1.4-1.4,2.8-2.1,3.5-1.75,7.7-3.26,12.6-4.55,4.9-1.28,10.09-1.93,15.57-1.93,11.9,0,20.62,2.71,26.16,8.14,5.54,5.42,8.31,13.62,8.31,24.59v32.55ZM44.14,80.5c3.27,0,6.71-.61,10.33-1.84,3.62-1.22,6.76-3.35,9.45-6.39,1.63-1.86,2.77-4,3.41-6.39.64-2.39.96-5.28.96-8.66v-4.2c-2.92-.7-5.98-1.25-9.19-1.66-3.21-.41-6.33-.61-9.36-.61-6.65,0-11.61,1.34-14.88,4.02-3.27,2.69-4.9,6.54-4.9,11.55,0,4.67,1.23,8.2,3.67,10.59,2.45,2.39,5.95,3.59,10.5,3.59ZM124.47,91.35c-1.75,0-3.04-.32-3.85-.96-.82-.64-1.52-1.95-2.1-3.94L95.07,9.1c-.59-1.98-.87-3.33-.87-4.02,0-1.63.81-2.45,2.45-2.45h9.8c1.86,0,3.18.32,3.94.96.76.64,1.43,1.96,2.01,3.94l16.8,66.15,15.57-66.15c.46-1.98,1.11-3.29,1.93-3.94.81-.64,2.16-.96,4.02-.96h8.05c1.87,0,3.21.32,4.03.96.81.64,1.46,1.96,1.92,3.94l15.75,67.03L197.79,7.52c.58-1.98,1.25-3.29,2.01-3.94.76-.64,2.07-.96,3.94-.96h9.27c1.63,0,2.45.82,2.45,2.45,0,.47-.06.99-.17,1.57-.12.59-.35,1.4-.7,2.45l-24.15,77.35c-.59,1.99-1.29,3.3-2.1,3.94-.82.64-2.1.96-3.85.96h-8.58c-1.87,0-3.21-.35-4.03-1.05-.82-.7-1.46-2.04-1.92-4.03l-15.58-64.4-15.4,64.4c-.47,1.99-1.11,3.33-1.92,4.03-.82.7-2.16,1.05-4.03,1.05h-8.58ZM252.92,93.98c-5.25,0-10.38-.58-15.4-1.75-5.02-1.16-8.87-2.51-11.55-4.03-1.63-.93-2.66-1.86-3.06-2.8-.41-.93-.61-1.86-.61-2.8v-5.08c0-2.1.76-3.15,2.28-3.15.58,0,1.19.12,1.84.35.64.24,1.49.59,2.54,1.05,3.38,1.52,7.06,2.69,11.02,3.5,3.96.82,7.93,1.23,11.9,1.23,6.3,0,11.17-1.11,14.61-3.33,3.44-2.21,5.16-5.37,5.16-9.45,0-2.8-.9-5.13-2.71-7-1.81-1.87-5.16-3.62-10.06-5.25l-14.53-4.55c-7.35-2.33-12.69-5.71-16.01-10.15-3.32-4.43-4.99-9.27-4.99-14.52,0-4.2.9-7.9,2.71-11.11,1.81-3.21,4.2-5.95,7.17-8.23,2.97-2.27,6.45-4,10.41-5.16,3.96-1.16,8.16-1.75,12.6-1.75,2.21,0,4.46.15,6.74.44,2.28.29,4.43.67,6.47,1.14,2.04.47,3.94.99,5.69,1.57,1.75.59,3.15,1.17,4.2,1.75,1.4.82,2.39,1.64,2.98,2.45.58.82.87,1.92.87,3.33v4.72c0,2.1-.76,3.15-2.28,3.15-.82,0-2.1-.41-3.85-1.23-5.72-2.56-12.14-3.85-19.25-3.85-5.72,0-10.15.94-13.3,2.8-3.15,1.87-4.72,4.84-4.72,8.93,0,2.8.99,5.16,2.97,7.09,1.98,1.92,5.66,3.76,11.03,5.51l14.17,4.55c7.23,2.34,12.4,5.54,15.49,9.63,3.09,4.08,4.64,8.75,4.64,14,0,4.32-.87,8.2-2.62,11.64-1.75,3.44-4.17,6.39-7.26,8.84-3.09,2.45-6.8,4.32-11.11,5.6-4.32,1.28-9.04,1.92-14.17,1.92ZM267.05,134.91c-36.91,15.66-77.03,23.23-113.52,23.23-54.1,0-106.47-14.84-148.82-39.49-3.71-2.16-6.45,1.65-3.37,4.43,39.26,35.45,91.13,56.74,148.74,56.74,41.1,0,88.84-12.92,121.76-37.22,5.45-4.03.78-10.05-4.79-7.69ZM276.87,164.5c-1.2,3,1.38,4.21,4.1,1.94,17.66-14.78,22.23-45.74,18.61-50.21-3.59-4.43-34.47-8.25-53.32,4.98-2.9,2.03-2.4,4.84.82,4.46,10.62-1.27,34.24-4.11,38.45,1.28,4.22,5.4-4.68,27.62-8.66,37.54Z"/></svg></span>
+          <div>
+            <h3>AWS Community Builder <span class="mono">Serverless · 2026 cohort</span></h3>
+            <p>Selected for AWS's program for technical community contributors who share knowledge about building on AWS.</p>
+          </div>
+        </div>
+        <div class="certs">
+          <a class="cert reveal" href="https://www.credly.com/badges/5e0f7285-9d88-4188-9d16-6b6d4d18dfbc/" target="_blank" rel="noopener">
+            <img src="assets/img/image.webp" alt="" width="88" height="88" loading="lazy">
+            <div>
+              <h3>AWS Certified Solutions Architect – Associate</h3>
+              <p>Designing secure, scalable, cost-efficient systems on AWS, from IAM and VPC design to storage, compute and networking trade-offs.</p>
+              <span class="cert__verify mono">Verify on Credly ↗</span>
+            </div>
+          </a>
+          <a class="cert reveal" href="https://www.credly.com/badges/9f3e2c5f-756c-411b-9512-3e2a5a3bba2e/" target="_blank" rel="noopener">
+            <img src="assets/img/badge.webp" alt="" width="88" height="88" loading="lazy">
+            <div>
+              <h3>HashiCorp Certified: Terraform Associate</h3>
+              <p>Hands-on IaC concepts, state and module design, and provisioning real resources with Terraform.</p>
+              <span class="cert__verify mono">Verify on Credly ↗</span>
+            </div>
+          </a>
+          <a class="cert reveal" href="https://learn.microsoft.com/en-gb/users/saiharshavemula-8479/credentials/6f49d5290d133059" target="_blank" rel="noopener">
+            <img src="assets/img/github-actions-badge.webp" alt="" width="88" height="88" loading="lazy">
+            <div>
+              <h3>GitHub Actions</h3>
+              <p>CI/CD workflow authoring, reusable workflows, secrets and OIDC federation, and custom actions.</p>
+              <span class="cert__verify mono">Verify on Microsoft Learn ↗</span>
+            </div>
+          </a>
+          <a class="cert reveal" href="https://learn.microsoft.com/en-gb/users/harshavemula-8038/credentials/d75543dbbfd14732" target="_blank" rel="noopener">
+            <img src="assets/img/microsoft-certified-fundamentals-badge.svg" alt="" width="88" height="88" loading="lazy">
+            <div>
+              <h3>Microsoft Certified: Azure Fundamentals</h3>
+              <p>Azure core services, identity, governance and security fundamentals.</p>
+              <span class="cert__verify mono">Verify on Microsoft Learn ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow"><span class="mono">07</span> Testimonials</p>
+            <h2>What teammates say</h2>
+          </div>
+          <div class="carousel-ctrl">
+            <button class="icon-btn" type="button" data-scroll="-1" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="icon-btn" type="button" data-scroll="1" aria-label="Next testimonial"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="quotes" id="quotes" tabindex="0" aria-label="Testimonials, scroll horizontally">
+          <figure class="quote">
+            <blockquote>
+              <p>"Harsha is a true asset to any team he joins. He consistently goes above and beyond his assigned responsibilities, delivering his work with precision and care. He's always willing to jump in and support teammates with IT and DevOps needs, no matter the ask.</p>
+              <p>As a key member of the CIROH CyberInfrastructure team, Harsha helped build the infrastructure-as-code for the NGIAB-NRDS project and did outstanding work managing AWS costs and resources. He also maintains an impressive professional portfolio site, reflecting both his technical skill and his genuine passion for building tools that solve real-world problems.</p>
+              <p>I give Harsha my highest recommendation for any DevOps or DevSecOps Engineer role."</p>
+            </blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">AP</span><span><b>Arpita Patel</b>Assistant Director, IT and DevOps · CIROH CyberInfrastructure<small>Managed Harsha directly · Sep 2026</small></span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>
+              <p>"Harsha is an absolute gem to work with. He is easily one of the most proactive engineers I have worked with. That showed in how he managed our AWS infrastructure and stayed on top of the costs. He was always finding something to optimize and he handled the security side just as carefully.</p>
+              <p>On the NRDS project, Harsha was a huge resource for me, patiently walking me through the AWS architecture whenever I needed help. He kept learning something new on his own and he never kept it to himself. He would often share it with the team to help us with our work.</p>
+              <p>I learned a lot from working with him. Any team would be lucky to have him."</p>
+            </blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">MS</span><span><b>Manjila Singh</b>DevOps Engineer, Alabama Water Institute<small>Same team · Sep 2026</small></span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>
+              <p>"Harsha applies a dedicated curiosity that results in high quality work. He was an asset almost immediately upon joining the NRDS-NGIAB project, developing the core NRDS deployment mechanisms, and rapidly grew to be a primary maintainer of the software tooling ecosystem. I have confidence Harsha is a worthy addition to any software development team."</p>
+            </blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">JL</span><span><b>Jordan Laser</b>Software Engineer, Lynker<small>Same team, NRDS-NGIAB · Sep 2026</small></span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"He consistently demonstrated his expertise in CI/CD pipelines, automation, and cloud infrastructure management. Sai is technically proficient and an excellent team player. His proactive attitude and dedication ensured our projects were completed efficiently and successfully."</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">AJ</span><span><b>Avnish Joy</b>DevOps Team Manager, Vitrana</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"As Sai Harsha's lead, I am consistently impressed by his expertise in AWS, DevOps, Kubernetes, Shell Scripting, and GitLab. He has been instrumental in managing complex systems and implementing seamless CI/CD processes."</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">TY</span><span><b>Tharun Yerramreddy</b>Team Lead, DevOps, Vitrana</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"His outstanding work in formalizing our pipeline architecture significantly improved our workflows. Sai is a team player with strong communication skills and a commitment to delivering results."</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">AB</span><span><b>Abibalaji</b>Team Lead, Java, Vitrana</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"His expertise in AWS, Docker, GitLab, Terraform, and CI/CD pipelines made him a go-to person for automation. Harsha excels in managing complex projects and delivering scalable, efficient solutions."</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">SS</span><span><b>Shanmukh Sridhar</b>Python Developer, Vitrana</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"I can attest to his technical expertise in GitLab, AWS, Kubernetes, and Terraform. His meticulousness and ability to find creative solutions to complex problems have been a valuable asset to our team."</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">VB</span><span><b>Vanshika Bhatt</b>DevOps Engineer, Vitrana</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WRITING + CONTACT ============ -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <a class="writing reveal" href="https://medium.com/@harshaharshuharsha" target="_blank" rel="noopener">
+          <div>
+            <p class="eyebrow"><span class="mono">08</span> Writing</p>
+            <h3>I write about DevOps, cloud technologies and software engineering on Medium.</h3>
+          </div>
+          <span class="writing__cta">Read my blog ↗</span>
+        </a>
+
+        <div class="contact reveal">
+          <p class="eyebrow"><span class="mono">09</span> Contact</p>
+          <h2 class="contact__title">Let's build something <em>reliable</em>.</h2>
+          <p class="contact__lede">Open to DevOps, platform and cloud-infrastructure roles. The fastest way to reach me is email or a quick call.</p>
+
+          <div class="contact__primary">
+            <button class="email-copy" type="button" id="copy-email" data-email="vemulasaiharsha@gmail.com">
+              <span class="mono">vemulasaiharsha@gmail.com</span>
+              <span class="email-copy__hint" aria-live="polite">Copy</span>
+            </button>
+            <a class="btn btn--primary" href="https://calendly.com/vemulasaiharsha/30min" target="_blank" rel="noopener">Schedule a meeting</a>
+          </div>
+
+          <ul class="contact__links">
+            <li><a href="https://www.linkedin.com/in/saiharshavemula/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/harshavemula-ua" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://medium.com/@harshaharshuharsha" target="_blank" rel="noopener">Medium ↗</a></li>
+            <li><a href="tel:+919787933319">+91 97879 33319</a></li>
+            <li><a href="resume/Sai_Harsha_Vemula_Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↓</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Sai Harsha Vemula</p>
+      <p class="mono footer__built">Plain HTML, CSS &amp; JS · served from S3 + CloudFront</p>
+      <a href="#top" class="text-link">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============ CHAT ============ -->
+  <button class="chat-fab" type="button" id="chat-fab" aria-controls="chat" aria-expanded="false">
+    <span class="status-dot" aria-hidden="true"></span>
+    Ask about me
+  </button>
+  <section class="chat" id="chat" role="dialog" aria-label="Ask about Sai Harsha" hidden>
+    <header class="chat__head">
+      <div>
+        <p class="chat__title">Ask about Harsha</p>
+        <p class="chat__sub mono">Bedrock · Claude Haiku 4.5 · guardrailed</p>
+      </div>
+      <button class="icon-btn" type="button" id="chat-close" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="chat__body" id="chat-body" aria-live="polite">
+      <div class="msg msg--bot">Hi! I'm an AI assistant that knows Harsha's resume. Ask me about his experience, projects or how to get in touch.</div>
+      <div class="chips" id="chat-chips">
+        <button type="button">What are his top AWS skills?</button>
+        <button type="button">Tell me about NRDS</button>
+        <button type="button">What did he build at CIROH?</button>
+        <button type="button">How do I contact him?</button>
+      </div>
+    </div>
+    <form class="chat__form" id="chat-form" autocomplete="off">
+      <label for="chat-input" class="sr-only">Your question</label>
+      <input id="chat-input" type="text" placeholder="Ask anything…" maxlength="500" required>
+      <button type="submit" class="chat__send" aria-label="Send">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+  </section>
+
+  <!-- ============ COMMAND PALETTE ============ -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette__scrim" data-close-palette></div>
+    <div class="palette__panel" role="dialog" aria-modal="true" aria-label="Command menu">
+      <label for="palette-input" class="sr-only">Type a command</label>
+      <input id="palette-input" type="text" placeholder="Jump to a section, copy email, toggle theme…" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="palette-list">
+      <ul id="palette-list" role="listbox"></ul>
+      <p class="palette__hint mono">↑↓ to navigate · ↵ to select · esc to close</p>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="icon-btn lightbox__close" type="button" aria-label="Close image">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/chat.js" defer></script>
 </body>
 </html>
-
-
-
